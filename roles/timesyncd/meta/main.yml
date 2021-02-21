@@ -11,5 +11,4 @@ galaxy_info:
     - name: "Ubuntu"
       versions:
         - "focal"
-dependencies:
-  - role: "damex.systemd.service"
+dependencies: []
