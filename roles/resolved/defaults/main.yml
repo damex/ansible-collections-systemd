@@ -2,6 +2,7 @@
 systemd_resolved_service_name: "systemd-resolved"
 systemd_resolved_configuration_file: "/etc/systemd/resolved.conf"
 systemd_resolved_dns: []
+systemd_resolved_fallbackdns: []
 systemd_resolved_domains: []
 systemd_resolved_llmnr: false
 systemd_resolved_multicastdns: false

@@ -5,6 +5,9 @@ DNS = {{ systemd_resolved_dns | join(' ') }}
 {% else %}
 DNS = {{ ansible_default_ipv4.gateway }}
 {% endif %}
+{% if systemd_resolved_fallbackdns | length %}
+FallbackDNS = {{ systemd_resolved_fallbackdns | join(' ') }}
+{% endif %}
 Domains = {{ systemd_resolved_domains | join(' ') }}
 LLMNR = {{ systemd_resolved_llmnr }}
 MulticastDNS = {{ systemd_resolved_multicastdns }}
