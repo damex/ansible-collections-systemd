@@ -1,0 +1,17 @@
+---
+name: "ansible-galaxy"
+on: # yamllint disable-line rule:truthy
+  push:
+    paths:
+      - "galaxy.yml"
+
+jobs:
+  ansible-galaxy:
+    name: "ansible-galaxy"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+      - run: "pip install ansible"
+      - run: "ansible-galaxy collection build"
+      - run: "ansible-galaxy collection publish --api-key ${{ secrets.GALAXY_API_KEY }} damex-systemd-*.tar.gz"
