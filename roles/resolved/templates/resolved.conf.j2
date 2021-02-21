@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 [Resolve]
 {% if systemd_resolved_dns | length %}
 DNS = {{ systemd_resolved_dns | join(' ') }}

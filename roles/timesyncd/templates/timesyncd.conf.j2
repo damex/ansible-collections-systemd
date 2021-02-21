@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 [Time]
 NTP = {{ systemd_timesyncd_ntp | join(' ') }}
 FallbackNTP = {{ systemd_timesyncd_fallbackntp | join(' ') }}
