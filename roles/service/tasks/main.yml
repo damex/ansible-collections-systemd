@@ -1,0 +1,8 @@
+---
+- name: "ensure {{ systemd_service_name }} systemd service"
+  block:
+    - import_tasks: "systemd_service.yml"
+  tags:
+    - "service"
+    - "systemd_service"
+    - "systemd"

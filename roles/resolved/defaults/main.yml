@@ -1,0 +1,12 @@
+---
+systemd_resolved_service_name: "systemd-resolved"
+systemd_resolved_configuration_file: "/etc/systemd/resolved.conf"
+systemd_resolved_dns: []
+systemd_resolved_domains: []
+systemd_resolved_llmnr: false
+systemd_resolved_multicastdns: false
+systemd_resolved_dnssec: false
+systemd_resolved_dnsovertls: false
+systemd_resolved_cache: true
+systemd_resolved_dnsstublistener: "udp"
+systemd_resolved_readetchosts: true

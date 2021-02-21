@@ -1,0 +1,8 @@
+---
+systemd_timesyncd_service_name: "systemd-timesyncd"
+systemd_timesyncd_configuration_file: "/etc/systemd/timesyncd.conf"
+systemd_timesyncd_ntp: []
+systemd_timesyncd_fallbackntp: []
+systemd_timesyncd_rootdistancemaxsec: 5
+systemd_timesyncd_pollintervalminsec: 32
+systemd_timesyncd_pollintervalmaxsec: 2048

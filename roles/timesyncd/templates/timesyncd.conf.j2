@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+[Time]
+NTP = {{ systemd_timesyncd_ntp | join(' ') }}
+FallbackNTP = {{ systemd_timesyncd_fallbackntp | join(' ') }}
+RootDistanceMaxSec = {{ systemd_timesyncd_rootdistancemaxsec }}
+PollIntervalMinSec = {{ systemd_timesyncd_pollintervalminsec }}
+PollIntervalMaxSec = {{ systemd_timesyncd_pollintervalmaxsec }}

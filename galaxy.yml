@@ -1,0 +1,12 @@
+---
+namespace: "damex"
+name: "systemd"
+version: null
+readme: "README.md"
+authors:
+  - "Roman Kuzmitskii <damex.pp@icloud.com>"
+license:
+  - "GPLv2"
+tags:
+  - "systemd"
+repository: "https://github.com/damex/ansible-collections-systemd"

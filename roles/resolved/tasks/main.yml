@@ -1,0 +1,11 @@
+---
+- name: "ensure systemd resolved"
+  block:
+    - import_tasks: "environment.yml"
+    - import_tasks: "resolved.conf.yml"
+    - import_tasks: "systemd.yml"
+    - import_tasks: "resolv.conf.yml"
+  tags:
+    - "resolved"
+    - "systemd_resolved"
+    - "systemd"

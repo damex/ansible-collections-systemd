@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: "Roman Kuzmitskii <damex.pp@icloud.com>"
+  description: "systemd service role"
+  license: "GPLv2"
+  platforms:
+    - name: "Debian"
+      versions:
+        - "buster"
+    - name: "Ubuntu"
+      versions:
+        - "focal"
+dependencies: []
