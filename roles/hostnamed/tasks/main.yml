@@ -1,0 +1,9 @@
+---
+- name: "ensure systemd hostnamed"
+  block:
+    - import_tasks: "hostnamectl.yml"
+    - import_tasks: "systemd.yml"
+  tags:
+    - "hostnamed"
+    - "systemd_hostnamed"
+    - "systemd"
