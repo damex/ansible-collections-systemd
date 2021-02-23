@@ -1,0 +1,3 @@
+---
+systemd_timedated_service_name: "systemd-timedated"
+systemd_timedated_timezone_name: "UTC"

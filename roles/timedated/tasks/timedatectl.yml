@@ -1,0 +1,22 @@
+---
+- name: "get available timedatectl timezones"
+  command: "timedatectl list-timezones --no-pager"
+  changed_when: false
+  register: "systemd_timedated_timedatectl_timezone_list"
+
+- name: "ensure timedatectl timezone is valid"
+  fail:
+    msg:
+      - "Please define a correct timezone_name variable!"
+      - "{{ systemd_timedated_timezone_name }} is incorrect."
+  when: "systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone_list.stdout"
+
+- name: "get current timedatectl timezone"
+  command: "timedatectl show -p Timezone --value"
+  register: "systemd_timedated_timedatectl_timezone"
+  changed_when: false
+
+- name: "ensure timedatectl timezone"
+  command: "timedatectl set-timezone {{ systemd_timedated_timezone_name }}"
+  when: "systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone.stdout"
+  become: true
