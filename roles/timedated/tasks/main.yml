@@ -1,0 +1,9 @@
+---
+- name: "ensure systemd timedated"
+  block:
+    - import_tasks: "timedatectl.yml"
+    - import_tasks: "systemd.yml"
+  tags:
+    - "systemd_timedated"
+    - "systemd"
+    - "timedated"
