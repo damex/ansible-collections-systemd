@@ -1,0 +1,27 @@
+---
+systemd_logind_service_name: "systemd-logind"
+systemd_logind_configuration_file: "/etc/systemd/logind.conf"
+systemd_logind_nautovts: 6
+systemd_logind_reservevt: 6
+systemd_logind_killuserprocesses: false
+systemd_logind_killonlyusers: ""
+systemd_logind_killexcludeusers: "root"
+systemd_logind_idleaction: "ignore"
+systemd_logind_idleactionsec: "30min"
+systemd_logind_inhibitdelaymaxsec: 5
+systemd_logind_userstopdelaysec: "10s"
+systemd_logind_handlepowerkey: "poweroff"
+systemd_logind_handlesuspendkey: "suspend"
+systemd_logind_handle_hibernatekey: "hibernate"
+systemd_logind_handlelidswitch: "suspend"
+systemd_logind_handlelidswitchexternalpower: "suspend"
+systemd_logind_handlelidswitchdocked: "ignore"
+systemd_logind_powerkeyignoreinhibited: false
+systemd_logind_suspendkeyignoreinhibited: false
+systemd_logind_hibernatekeyignoreinhibited: false
+systemd_logind_lidswitchignoreinhibited: true
+systemd_logind_holdofftimeoutsec: "30s"
+systemd_logind_runtimedirectorysize: "10%"
+systemd_logind_inhibitorsmax: 8192
+systemd_logind_sessionsmax: 8192
+systemd_logind_removeipc: true
