@@ -1,0 +1,7 @@
+{{ ansible_managed | comment }}
+[Network]
+SpeedMeter = {{ systemd_networkd_network_speedmeter }}
+SpeedMeterIntervalSec = {{ systemd_networkd_network_speedmeterintervalsec }}
+[DHCP]
+DUIDType = {{ systemd_networkd_dhcp_duidtype }}
+DUIDRawData = {{ systemd_networkd_dhcp_duidtyperawdata }}

@@ -1,0 +1,7 @@
+---
+systemd_networkd_service_name: "systemd-networkd"
+systemd_networkd_configuration_file: "/etc/systemd/networkd.conf"
+systemd_networkd_network_speedmeter: false
+systemd_networkd_network_speedmeterintervalsec: "10sec"
+systemd_networkd_dhcp_duidtype: "vendor"
+systemd_networkd_dhcp_duidtyperawdata: ""

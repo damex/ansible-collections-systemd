@@ -1,0 +1,9 @@
+---
+- name: "ensure systemd networkd"
+  block:
+    - import_tasks: "networkd.conf.yml"
+    - import_tasks: "systemd.yml"
+  tags:
+    - "networkd"
+    - "systemd_networkd"
+    - "systemd"
