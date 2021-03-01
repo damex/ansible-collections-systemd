@@ -1,0 +1,10 @@
+---
+- name: "ensure journald.conf"
+  ansible.builtin.template:
+    src: "journald.conf.j2"
+    dest: "{{ systemd_journald_configuration_file }}"
+    group: "root"
+    owner: "root"
+    mode: "0644"
+  become: true
+  register: "systemd_journald_conf"
