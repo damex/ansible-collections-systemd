@@ -1,0 +1,7 @@
+---
+- name: "ensure systemd {{ systemd_networkd_service_name }} service"
+  include_role:
+    name: "damex.systemd.service"
+  vars:
+    systemd_service_name: "{{ systemd_networkd_service_name }}"
+    systemd_service_restart_on: "{{ systemd_networkd_conf.changed }}"
