@@ -1,0 +1,10 @@
+---
+- name: "ensure logind.conf"
+  ansible.builtin.template:
+    src: "logind.conf.j2"
+    dest: "{{ systemd_logind_configuration_file }}"
+    group: "root"
+    owner: "root"
+    mode: "0644"
+  become: true
+  register: "systemd_logind_conf"

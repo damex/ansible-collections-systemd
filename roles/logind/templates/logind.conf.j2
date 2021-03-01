@@ -1,0 +1,26 @@
+{{ ansible_managed | comment }}
+[Login]
+NAutoVTs = {{ systemd_logind_nautovts }}
+ReserveVT = {{ systemd_logind_reservevt }}
+KillUserProcesses = {{ systemd_logind_killuserprocesses }}
+KillOnlyUsers = {{ systemd_logind_killonlyusers }}
+KillExcludeUsers = {{ systemd_logind_killexcludeusers }}
+IdleAction = {{ systemd_logind_idleaction }}
+IdleActionSec = {{ systemd_logind_idleactionsec }}
+InhibitDelayMaxSec = {{ systemd_logind_inhibitdelaymaxsec }}
+UserStopDelaySec = {{ systemd_logind_userstopdelaysec }}
+HandlePowerKey = {{ systemd_logind_handlepowerkey }}
+HandleSuspendKey = {{ systemd_logind_handlesuspendkey }}
+HandleHibernateKey = {{ systemd_logind_handle_hibernatekey }}
+HandleLidSwitch = {{ systemd_logind_handlelidswitch }}
+HandleLidSwitchExternalPower = {{ systemd_logind_handlelidswitchexternalpower }}
+HandleLidSwitchDocked = {{ systemd_logind_handlelidswitchdocked }}
+PowerKeyIgnoreInhibited = {{ systemd_logind_powerkeyignoreinhibited }}
+SuspendKeyIgnoreInhibited = {{ systemd_logind_suspendkeyignoreinhibited }}
+HibernateKeyIgnoreInhibited = {{ systemd_logind_hibernatekeyignoreinhibited }}
+LidSwitchIgnoreInhibited = {{ systemd_logind_lidswitchignoreinhibited }}
+HoldoffTimeoutSec = {{ systemd_logind_holdofftimeoutsec }}
+RuntimeDirectorySize = {{ systemd_logind_runtimedirectorysize }}
+InhibitorsMax = {{ systemd_logind_inhibitorsmax }}
+SessionsMax = {{ systemd_logind_sessionsmax }}
+RemoveIPC = {{ systemd_logind_removeipc }}
