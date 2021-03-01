@@ -1,0 +1,3 @@
+---
+systemd_localed_service_name: "systemd-localed"
+systemd_localed_locale_name: "C.UTF-8"

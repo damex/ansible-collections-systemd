@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: "Roman Kuzmitskii <damex.pp@icloud.com>"
+  description: "systemd localed role"
+  license: "GPLv2"
+  min_ansible_version: "2.10.6"
+  platforms:
+    - name: "Debian"
+      versions:
+        - "buster"
+    - name: "Ubuntu"
+      versions:
+        - "focal"
+dependencies: []
