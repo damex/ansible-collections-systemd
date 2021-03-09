@@ -2,6 +2,8 @@
 - name: "ensure systemd resolved"
   block:
     - import_tasks: "environment.yml"
+    - import_tasks: "nss.yml"
+      when: "systemd_resolved_nss"
     - import_tasks: "resolved.conf.yml"
     - import_tasks: "systemd.yml"
     - import_tasks: "resolv.conf.yml"
