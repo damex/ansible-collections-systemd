@@ -1,7 +1,0 @@
----
-- name: "ensure {{ systemd_timesyncd_service_name }} systemd service"
-  include_role:
-    name: "damex.systemd.service"
-  vars:
-    systemd_service_name: "{{ systemd_timesyncd_service_name }}"
-    systemd_service_restart_on: "{{ systemd_timesyncd_conf.changed }}"

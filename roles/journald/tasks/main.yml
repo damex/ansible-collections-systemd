@@ -1,9 +1,0 @@
----
-- name: "ensure systemd journald"
-  block:
-    - import_tasks: "journald.conf.yml"
-    - import_tasks: "systemd.yml"
-  tags:
-    - "journald"
-    - "systemd_journald"
-    - "systemd"

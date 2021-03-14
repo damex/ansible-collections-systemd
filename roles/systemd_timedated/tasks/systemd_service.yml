@@ -1,0 +1,6 @@
+---
+- name: "ensure {{ systemd_timedated_service_name }} systemd service"
+  include_role:
+    name: "damex.systemd.systemd_service"
+  vars:
+    systemd_service_name: "{{ systemd_timedated_service_name }}"

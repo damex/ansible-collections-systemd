@@ -1,0 +1,9 @@
+---
+- name: "ensure systemd localed"
+  block:
+    - import_tasks: "localectl.yml"
+    - import_tasks: "systemd_service.yml"
+  tags:
+    - "localed"
+    - "systemd_localed"
+    - "systemd"
