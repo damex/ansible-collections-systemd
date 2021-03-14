@@ -1,7 +1,0 @@
----
-- name: "ensure systemd {{ systemd_logind_service_name }} service"
-  include_role:
-    name: "damex.systemd.service"
-  vars:
-    systemd_service_name: "{{ systemd_logind_service_name }}"
-    systemd_service_restart_on: "{{ systemd_logind_conf.changed }}"

@@ -1,9 +1,0 @@
----
-- name: "ensure systemd timesyncd"
-  block:
-    - import_tasks: "timesyncd.conf.yml"
-    - import_tasks: "systemd.yml"
-  tags:
-    - "systemd_timesyncd"
-    - "systemd"
-    - "timesyncd"
