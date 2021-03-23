@@ -1,8 +1,10 @@
 ---
 - name: "ensure systemd networkd"
   block:
-    - import_tasks: "networkd.conf.yml"
-    - import_tasks: "systemd_service.yml"
+    - name: "ensure systemd networkd networkd.conf"
+      ansible.builtin.import_tasks: "networkd.conf.yml"
+    - name: "ensure systemd networkd systemd service"
+      import_tasks: "systemd_service.yml"
   tags:
     - "networkd"
     - "systemd_networkd"
