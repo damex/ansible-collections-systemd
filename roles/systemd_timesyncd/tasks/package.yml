@@ -1,6 +1,6 @@
 ---
 - name: "ensure systemd-timesyncd package"
-  include_role:
+  ansible.builtin.include_role:
     name: "damex.apt.apt_packages"
   vars:
     apt_packages:

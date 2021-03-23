@@ -1,6 +1,6 @@
 ---
-- name: "ensure systemd {{ systemd_journald_service_name }} service"
-  include_role:
+- name: "ensure {{ systemd_journald_service_name }} systemd service"
+  ansible.builtin.include_role:
     name: "damex.systemd.systemd_service"
   vars:
     systemd_service_name: "{{ systemd_journald_service_name }}"
