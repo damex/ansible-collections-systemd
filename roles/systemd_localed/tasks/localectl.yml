@@ -1,22 +1,22 @@
 ---
 - name: "get available localectl locales"
-  command: "localectl list-locales"
+  ansible.builtin.command: "localectl list-locales"
   changed_when: false
   register: "systemd_localed_localectl_locale_list"
 
 - name: "ensure localectl locale is valid"
-  fail:
+  ansible.builtin.fail:
     msg:
       - "Please define a correct locale_name variable!"
       - "{{ systemd_localed_locale_name }} is incorrect."
   when: "systemd_localed_locale_name not in systemd_localed_localectl_locale_list.stdout"
 
 - name: "get current localectl status"
-  command: "localectl status"
+  ansible.builtin.command: "localectl status"
   register: "systemd_localed_localectl_status"
   changed_when: false
 
 - name: "ensure localectl locale"
-  command: "localectl set-locale {{ systemd_localed_locale_name }}"
+  ansible.builtin.command: "localectl set-locale {{ systemd_localed_locale_name }}"
   when: "systemd_localed_locale_name not in systemd_localed_localectl_status.stdout"
   become: true
