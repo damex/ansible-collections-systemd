@@ -1,6 +1,10 @@
 {{ ansible_managed | comment }}
 [Time]
+{% if systemd_timesyncd_ntp | length %}
 NTP = {{ systemd_timesyncd_ntp | join(' ') }}
+{% else %}
+NTP = {{ ansible_default_ipv4.gateway }}
+{% endif %}
 FallbackNTP = {{ systemd_timesyncd_fallbackntp | join(' ') }}
 RootDistanceMaxSec = {{ systemd_timesyncd_rootdistancemaxsec }}
 PollIntervalMinSec = {{ systemd_timesyncd_pollintervalminsec }}
