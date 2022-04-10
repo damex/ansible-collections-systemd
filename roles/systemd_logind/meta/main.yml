@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: "Roman Kuzmitskii <damex.pp@icloud.com>"
+  author: "Roman Kuzmitskii <ansible@damex.org>"
   description: "systemd logind role"
   license: "GPLv2"
   min_ansible_version: "2.10.6"
