@@ -9,7 +9,9 @@
     msg:
       - Please define a correct locale_name variable!
       - "{{ systemd_localed_locale_name }} is incorrect."
-  when: systemd_localed_locale_name not in systemd_localed_localectl_locale_list.stdout
+  when:
+    - systemd_localed_locale_name not in systemd_localed_localectl_locale_list.stdout
+    - not ansible_check_mode
 
 - name: get current localectl status
   ansible.builtin.command: localectl status
