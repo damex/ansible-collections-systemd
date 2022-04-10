@@ -1,0 +1,10 @@
+---
+- name: "ensure pstore.conf"
+  ansible.builtin.template:
+    src: "pstore.conf.j2"
+    dest: "{{ systemd_pstore_configuration_file }}"
+    group: "root"
+    owner: "root"
+    mode: "0644"
+  become: true
+  register: "systemd_pstore_conf"
