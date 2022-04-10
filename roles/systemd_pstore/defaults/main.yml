@@ -1,5 +1,5 @@
 ---
 systemd_pstore_service_name: "systemd-pstore"
 systemd_pstore_configuration_file: "/etc/systemd/pstore.conf"
-systemd_pstore_storage: external
+systemd_pstore_storage: "external"
 systemd_pstore_unlink: true
