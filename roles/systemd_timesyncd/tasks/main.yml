@@ -1,15 +1,15 @@
 ---
-- name: "ensure systemd timesyncd"
+- name: ensure systemd timesyncd
   block:
-    - name: "ensure systemd timesyncd environment facts are collected"
-      ansible.builtin.import_tasks: "environment.yml"
-    - name: "ensure systemd timesyncd package"
-      ansible.builtin.import_tasks: "package.yml"
-    - name: "ensure systemd timesyncd timesyncd.conf"
-      ansible.builtin.import_tasks: "timesyncd.conf.yml"
-    - name: "ensure systemd timesyncd systemd service"
-      ansible.builtin.import_tasks: "systemd_service.yml"
+    - name: ensure systemd timesyncd environment facts are collected
+      ansible.builtin.import_tasks: environment.yml
+    - name: ensure systemd timesyncd package
+      ansible.builtin.import_tasks: package.yml
+    - name: ensure systemd timesyncd timesyncd.conf
+      ansible.builtin.import_tasks: timesyncd.conf.yml
+    - name: ensure systemd timesyncd systemd service
+      ansible.builtin.import_tasks: systemd_service.yml
   tags:
-    - "systemd_timesyncd"
-    - "systemd"
-    - "timesyncd"
+    - systemd_timesyncd
+    - systemd
+    - timesyncd

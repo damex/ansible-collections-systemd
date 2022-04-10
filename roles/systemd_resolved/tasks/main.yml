@@ -1,15 +1,15 @@
 ---
-- name: "ensure systemd resolved"
+- name: ensure systemd resolved
   block:
-    - name: "ensure systemd resolved environment facts are collected"
-      ansible.builtin.import_tasks: "environment.yml"
-    - name: "ensure systemd resolved resolved.conf"
-      ansible.builtin.import_tasks: "resolved.conf.yml"
-    - name: "ensure systemd resolved systemd service"
-      ansible.builtin.import_tasks: "systemd_service.yml"
-    - name: "ensure systemd resolved resolv.conf"
-      ansible.builtin.import_tasks: "resolv.conf.yml"
+    - name: ensure systemd resolved environment facts are collected
+      ansible.builtin.import_tasks: environment.yml
+    - name: ensure systemd resolved resolved.conf
+      ansible.builtin.import_tasks: resolved.conf.yml
+    - name: ensure systemd resolved systemd service
+      ansible.builtin.import_tasks: systemd_service.yml
+    - name: ensure systemd resolved resolv.conf
+      ansible.builtin.import_tasks: resolv.conf.yml
   tags:
-    - "resolved"
-    - "systemd_resolved"
-    - "systemd"
+    - resolved
+    - systemd_resolved
+    - systemd

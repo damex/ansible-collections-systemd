@@ -1,9 +1,9 @@
 ---
 rules:
   braces:
-    forbid: "non-empty"
+    forbid: non-empty
   brackets:
-    forbid: "non-empty"
+    forbid: non-empty
   colons:
     max-spaces-after: 1
     max-spaces-before: 0
@@ -15,7 +15,7 @@ rules:
     ignore-shebangs: false
     min-spaces-from-content: 1
     require-starting-space: true
-  comments-indentation: "enable"
+  comments-indentation: enable
   document-end:
     present: false
   document-start:
@@ -33,19 +33,19 @@ rules:
     check-multi-line-strings: true
     indent-sequences: true
     spaces: 2
-  key-duplicates: "enable"
-  key-ordering: "disable"
-  line-length: "disable"
-  new-line-at-end-of-file: "enable"
+  key-duplicates: enable
+  key-ordering: disable
+  line-length: disable
+  new-line-at-end-of-file: enable
   new-lines:
-    type: "unix"
+    type: unix
   octal-values:
     forbid-explicit-octal: true
     forbid-implicit-octal: true
   quoted-strings:
-    quote-type: "double"
-    required: true
-  trailing-spaces: "enable"
+    quote-type: double
+    required: only-when-needed
+  trailing-spaces: enable
   truthy:
     allowed-values:
       - "true"

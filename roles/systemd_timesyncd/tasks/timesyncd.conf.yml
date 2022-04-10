@@ -1,10 +1,10 @@
 ---
-- name: "ensure timesyncd.conf"
+- name: ensure timesyncd.conf
   ansible.builtin.template:
-    src: "timesyncd.conf.j2"
+    src: timesyncd.conf.j2
     dest: "{{ systemd_timesyncd_configuration_file }}"
-    group: "root"
-    owner: "root"
+    group: root
+    owner: root
     mode: "0644"
-  register: "systemd_timesyncd_conf"
+  register: systemd_timesyncd_conf
   become: true

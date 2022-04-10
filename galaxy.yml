@@ -1,13 +1,13 @@
 ---
-namespace: "damex"
-name: "systemd"
-version: "0.2.4"
-readme: "README.md"
+namespace: damex
+name: systemd
+version: 0.2.4
+readme: README.md
 authors:
-  - "Roman Kuzmitskii <ansible@damex.org>"
-dependencies:
-  "damex.apt": "*"
-license_file: "LICENSE"
+  - Roman Kuzmitskii <ansible@damex.org>
+license_file: LICENSE
 tags:
-  - "systemd"
-repository: "https://github.com/damex/ansible-collections-systemd"
+  - systemd
+repository: https://github.com/damex/ansible-collections-systemd
+dependencies:
+  damex.apt: "*"
