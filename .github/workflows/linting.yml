@@ -1,24 +1,24 @@
 ---
-name: "linting"
+name: linting
 on: # yamllint disable-line rule:truthy
-  - "push"
-  - "pull_request"
+  - push
+  - pull_request
 
 jobs:
   ansible-lint:
-    name: "ansible-lint"
-    runs-on: "ubuntu-latest"
+    name: ansible-lint
+    runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
-      - uses: "ansible/ansible-lint-action@main"
+      - uses: actions/checkout@v2
+      - uses: ansible/ansible-lint-action@main
         with:
           targets: ""
           args: ""
   yamllint:
-    name: "yamllint"
-    runs-on: "ubuntu-latest"
+    name: yamllint
+    runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
-      - uses: "actions/setup-python@v2"
-      - run: "pip install yamllint"
-      - run: "yamllint -s ."
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install yamllint
+      - run: yamllint -s .

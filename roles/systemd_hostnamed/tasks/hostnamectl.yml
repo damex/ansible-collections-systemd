@@ -1,10 +1,10 @@
 ---
-- name: "get current hostnamectl hostname"
-  ansible.builtin.command: "hostnamectl status --static"
+- name: get current hostnamectl hostname
+  ansible.builtin.command: hostnamectl status --static
   changed_when: false
-  register: "systemd_hostnamed_hostnamectl_hostname"
+  register: systemd_hostnamed_hostnamectl_hostname
 
-- name: "ensure hostnamectl hostname"
-  ansible.builtin.command: "hostnamectl set-hostname {{ inventory_hostname }}"
-  when: "inventory_hostname != systemd_hostnamed_hostnamectl_hostname.stdout"
+- name: ensure hostnamectl hostname
+  ansible.builtin.command: hostnamectl set-hostname {{ inventory_hostname }}
+  when: inventory_hostname != systemd_hostnamed_hostnamectl_hostname.stdout
   become: true

@@ -1,11 +1,11 @@
 ---
-- name: "ensure systemd timedated"
+- name: ensure systemd timedated
   block:
-    - name: "ensure systemd timedated timezone"
-      ansible.builtin.import_tasks: "timedatectl.yml"
-    - name: "ensure systemd timedated systemd service"
-      ansible.builtin.import_tasks: "systemd_service.yml"
+    - name: ensure systemd timedated timezone
+      ansible.builtin.import_tasks: timedatectl.yml
+    - name: ensure systemd timedated systemd service
+      ansible.builtin.import_tasks: systemd_service.yml
   tags:
-    - "systemd_timedated"
-    - "systemd"
-    - "timedated"
+    - systemd_timedated
+    - systemd
+    - timedated

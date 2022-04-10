@@ -1,22 +1,22 @@
 ---
-- name: "get available timedatectl timezones"
-  ansible.builtin.command: "timedatectl list-timezones --no-pager"
+- name: get available timedatectl timezones
+  ansible.builtin.command: timedatectl list-timezones --no-pager
   changed_when: false
-  register: "systemd_timedated_timedatectl_timezone_list"
+  register: systemd_timedated_timedatectl_timezone_list
 
-- name: "ensure timedatectl timezone is valid"
+- name: ensure timedatectl timezone is valid
   ansible.builtin.fail:
     msg:
-      - "Please define a correct timezone_name variable!"
+      - Please define a correct timezone_name variable!
       - "{{ systemd_timedated_timezone_name }} is incorrect."
-  when: "systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone_list.stdout"
+  when: systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone_list.stdout
 
-- name: "get current timedatectl timezone"
-  ansible.builtin.command: "timedatectl show -p Timezone --value"
-  register: "systemd_timedated_timedatectl_timezone"
+- name: get current timedatectl timezone
+  ansible.builtin.command: timedatectl show -p Timezone --value
+  register: systemd_timedated_timedatectl_timezone
   changed_when: false
 
-- name: "ensure timedatectl timezone"
-  ansible.builtin.command: "timedatectl set-timezone {{ systemd_timedated_timezone_name }}"
-  when: "systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone.stdout"
+- name: ensure timedatectl timezone
+  ansible.builtin.command: timedatectl set-timezone {{ systemd_timedated_timezone_name }}
+  when: systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone.stdout
   become: true

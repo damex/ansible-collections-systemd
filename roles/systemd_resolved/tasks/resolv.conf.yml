@@ -1,8 +1,8 @@
 ---
-- name: "ensure resolv.conf"
+- name: ensure resolv.conf
   ansible.builtin.file:
-    src: "/run/systemd/resolve/stub-resolv.conf"
-    dest: "/etc/resolv.conf"
-    state: "link"
+    src: /run/systemd/resolve/stub-resolv.conf
+    dest: /etc/resolv.conf
+    state: link
     force: true
   become: true

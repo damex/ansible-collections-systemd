@@ -1,11 +1,11 @@
 ---
-- name: "ensure systemd journald"
+- name: ensure systemd journald
   block:
-    - name: "ensure systemd journald journald.conf"
-      ansible.builtin.import_tasks: "journald.conf.yml"
-    - name: "ensure systemd journald systemd service"
-      ansible.builtin.import_tasks: "systemd_service.yml"
+    - name: ensure systemd journald journald.conf
+      ansible.builtin.import_tasks: journald.conf.yml
+    - name: ensure systemd journald systemd service
+      ansible.builtin.import_tasks: systemd_service.yml
   tags:
-    - "journald"
-    - "systemd_journald"
-    - "systemd"
+    - journald
+    - systemd_journald
+    - systemd
