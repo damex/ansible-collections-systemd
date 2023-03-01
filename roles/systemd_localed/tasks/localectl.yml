@@ -1,5 +1,5 @@
 ---
-- name: get available localectl locales
+- name: Get available localectl locales
   ansible.builtin.command: localectl list-locales
   changed_when: false
   register: systemd_localed_localectl_locale_list
@@ -13,7 +13,7 @@
     - systemd_localed_localectl_locale_list.stdout
     - systemd_localed_locale_name not in systemd_localed_localectl_locale_list.stdout
 
-- name: get current localectl status
+- name: Get current localectl status
   ansible.builtin.command: localectl status
   register: systemd_localed_localectl_status
   changed_when: false

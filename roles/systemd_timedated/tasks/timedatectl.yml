@@ -1,5 +1,5 @@
 ---
-- name: get available timedatectl timezones
+- name: Get available timedatectl timezones
   ansible.builtin.command: timedatectl list-timezones --no-pager
   changed_when: false
   register: systemd_timedated_timedatectl_timezone_list
@@ -11,7 +11,7 @@
       - "{{ systemd_timedated_timezone_name }} is incorrect."
   when: systemd_timedated_timezone_name not in systemd_timedated_timedatectl_timezone_list.stdout
 
-- name: get current timedatectl timezone
+- name: Get current timedatectl timezone
   ansible.builtin.command: timedatectl show -p Timezone --value
   register: systemd_timedated_timedatectl_timezone
   changed_when: false

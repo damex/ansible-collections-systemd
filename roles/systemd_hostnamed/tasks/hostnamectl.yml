@@ -1,5 +1,5 @@
 ---
-- name: get current hostnamectl hostname
+- name: Get current hostnamectl hostname
   ansible.builtin.command: hostnamectl status --static
   changed_when: false
   register: systemd_hostnamed_hostnamectl_hostname
