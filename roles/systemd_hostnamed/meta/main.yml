@@ -3,7 +3,7 @@ galaxy_info:
   author: Roman Kuzmitskii <ansible@damex.org>
   description: systemd hostnamed role
   license: GPLv2
-  min_ansible_version: 2.10.6
+  min_ansible_version: 2.14.2
   platforms:
     - name: Debian
       versions:
