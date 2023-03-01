@@ -8,4 +8,4 @@
     - name: Ensure systemd networkd networkd.conf
       ansible.builtin.import_tasks: networkd.conf.yml
     - name: Ensure systemd networkd systemd service
-      import_tasks: systemd_service.yml
+      ansible.builtin.import_tasks: systemd_service.yml
