@@ -5,6 +5,7 @@ version: 0.2.8
 readme: README.md
 authors:
   - Roman Kuzmitskii <ansible@damex.org>
+description: systemd collection
 license_file: LICENSE
 tags:
   - linux
