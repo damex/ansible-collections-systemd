@@ -1,5 +1,8 @@
 ---
 - name: Ensure {{ systemd_service_name }} systemd service
+  become: true
+  when:
+    - systemd_service_name | length
   block:
     - name: Ensure {{ systemd_service_name }} systemd service is enabled
       ansible.builtin.systemd:
@@ -24,6 +27,3 @@
         state: restarted
       when:
         - systemd_service_restart_on
-  become: true
-  when:
-    - systemd_service_name | length
