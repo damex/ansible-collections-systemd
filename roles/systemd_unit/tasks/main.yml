@@ -1,9 +1,9 @@
 ---
 - name: Ensure {{ systemd_unit_name }} systemd unit
-  block:
-    - name: Ensure {{ systemd_unit_name }} systemd unit
-      ansible.builtin.import_tasks: systemd_unit.yml
   tags:
     - unit
     - systemd_unit
     - systemd
+  block:
+    - name: Ensure {{ systemd_unit_name }} systemd unit
+      ansible.builtin.import_tasks: systemd_unit.yml

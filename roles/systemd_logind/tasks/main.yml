@@ -1,11 +1,11 @@
 ---
 - name: Ensure systemd logind
+  tags:
+    - logind
+    - systemd_logind
+    - systemd
   block:
     - name: Ensure systemd logind logind.conf
       ansible.builtin.import_tasks: logind.conf.yml
     - name: Ensure systemd logind systemd service
       ansible.builtin.import_tasks: systemd_service.yml
-  tags:
-    - logind
-    - systemd_logind
-    - systemd
