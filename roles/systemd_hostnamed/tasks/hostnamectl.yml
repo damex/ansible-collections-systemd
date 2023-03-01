@@ -2,9 +2,13 @@
 - name: Get current hostnamectl hostname
   ansible.builtin.command: hostnamectl status --static
   changed_when: false
-  register: systemd_hostnamed_hostnamectl_hostname
+  register: systemd_hostnamed_hostnamectl_current_hostname
 
 - name: Ensure hostnamectl hostname
   ansible.builtin.command: hostnamectl set-hostname {{ inventory_hostname }}
-  when: inventory_hostname != systemd_hostnamed_hostnamectl_hostname.stdout
+  when: inventory_hostname != systemd_hostnamed_hostnamectl_current_hostname.stdout
+  register: systemd_hostnamed_hostnamectl_hostname
+  changed_when:
+    - systemd_hostnamed_hostnamectl_hostname.rc == 0
+    - systemd_hostnamed_hostnamectl_hostname.stdout == ""
   become: true
