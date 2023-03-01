@@ -7,6 +7,7 @@ authors:
   - Roman Kuzmitskii <ansible@damex.org>
 license_file: LICENSE
 tags:
+  - linux
   - systemd
 repository: https://github.com/damex/ansible-collections-systemd
 dependencies:
