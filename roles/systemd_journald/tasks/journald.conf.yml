@@ -1,5 +1,5 @@
 ---
-- name: ensure journald.conf
+- name: Ensure journald.conf
   ansible.builtin.template:
     src: journald.conf.j2
     dest: "{{ systemd_journald_configuration_file }}"

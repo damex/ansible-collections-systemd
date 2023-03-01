@@ -1,9 +1,9 @@
 ---
-- name: ensure systemd pstore
+- name: Ensure systemd pstore
   block:
-    - name: ensure systemd pstore pstore.conf
+    - name: Ensure systemd pstore pstore.conf
       ansible.builtin.import_tasks: pstore.conf.yml
-    - name: ensure systemd pstore systemd service
+    - name: Ensure systemd pstore systemd service
       ansible.builtin.import_tasks: systemd_service.yml
   tags:
     - pstore

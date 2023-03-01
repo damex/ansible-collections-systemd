@@ -1,9 +1,9 @@
 ---
-- name: ensure systemd logind
+- name: Ensure systemd logind
   block:
-    - name: ensure systemd logind logind.conf
+    - name: Ensure systemd logind logind.conf
       ansible.builtin.import_tasks: logind.conf.yml
-    - name: ensure systemd logind systemd service
+    - name: Ensure systemd logind systemd service
       ansible.builtin.import_tasks: systemd_service.yml
   tags:
     - logind

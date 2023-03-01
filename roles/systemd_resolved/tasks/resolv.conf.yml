@@ -1,5 +1,5 @@
 ---
-- name: ensure resolv.conf
+- name: Ensure resolv.conf
   ansible.builtin.file:
     src: /run/systemd/resolve/stub-resolv.conf
     dest: /etc/resolv.conf

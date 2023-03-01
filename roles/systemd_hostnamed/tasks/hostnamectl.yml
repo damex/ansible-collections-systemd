@@ -4,7 +4,7 @@
   changed_when: false
   register: systemd_hostnamed_hostnamectl_hostname
 
-- name: ensure hostnamectl hostname
+- name: Ensure hostnamectl hostname
   ansible.builtin.command: hostnamectl set-hostname {{ inventory_hostname }}
   when: inventory_hostname != systemd_hostnamed_hostnamectl_hostname.stdout
   become: true

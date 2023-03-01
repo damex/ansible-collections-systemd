@@ -1,5 +1,5 @@
 ---
-- name: ensure logind.conf
+- name: Ensure logind.conf
   ansible.builtin.template:
     src: logind.conf.j2
     dest: "{{ systemd_logind_configuration_file }}"

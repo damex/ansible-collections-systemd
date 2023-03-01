@@ -1,5 +1,5 @@
 ---
-- name: ensure pstore.conf
+- name: Ensure pstore.conf
   ansible.builtin.template:
     src: pstore.conf.j2
     dest: "{{ systemd_pstore_configuration_file }}"

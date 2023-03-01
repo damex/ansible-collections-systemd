@@ -1,5 +1,5 @@
 ---
-- name: ensure network facts are collected
+- name: Ensure network facts are collected
   ansible.builtin.setup:
     gather_subset:
       - network

@@ -1,5 +1,5 @@
 ---
-- name: ensure {{ systemd_journald_service_name }} systemd service
+- name: Ensure {{ systemd_journald_service_name }} systemd service
   ansible.builtin.include_role:
     name: damex.systemd.systemd_service
   vars:

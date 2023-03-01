@@ -1,5 +1,5 @@
 ---
-- name: ensure timesyncd.conf
+- name: Ensure timesyncd.conf
   ansible.builtin.template:
     src: timesyncd.conf.j2
     dest: "{{ systemd_timesyncd_configuration_file }}"

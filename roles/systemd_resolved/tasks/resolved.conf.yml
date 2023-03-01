@@ -1,5 +1,5 @@
 ---
-- name: ensure resolved.conf
+- name: Ensure resolved.conf
   ansible.builtin.template:
     src: resolved.conf.j2
     dest: "{{ systemd_resolved_configuration_file }}"

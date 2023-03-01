@@ -1,5 +1,5 @@
 ---
-- name: ensure networkd.conf
+- name: Ensure networkd.conf
   ansible.builtin.template:
     src: networkd.conf.j2
     dest: "{{ systemd_networkd_configuration_file }}"
