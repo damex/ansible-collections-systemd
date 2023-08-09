@@ -1,8 +1,18 @@
 ---
-- name: Ensure resolv.conf
+- name: ensure resolv.conf (classic)
+  ansible.builtin.file:
+    src: /run/systemd/resolve/resolv.conf
+    dest: /etc/resolv.conf
+    state: link
+    force: true
+  become: true
+  when: ( systemd_resolved_dnsstublistener | regex_search("no|false|0", ignorecase=True) )
+
+- name: ensure resolv.conf (stub)
   ansible.builtin.file:
     src: /run/systemd/resolve/stub-resolv.conf
     dest: /etc/resolv.conf
     state: link
     force: true
   become: true
+  when: ( systemd_resolved_dnsstublistener | regex_search("yes|true|1|udp|tcp", ignorecase=True) )
