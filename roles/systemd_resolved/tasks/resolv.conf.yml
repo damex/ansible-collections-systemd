@@ -1,5 +1,5 @@
 ---
-- name: ensure resolv.conf (classic)
+- name: Ensure resolv.conf (classic)
   ansible.builtin.file:
     src: /run/systemd/resolve/resolv.conf
     dest: /etc/resolv.conf
@@ -8,7 +8,7 @@
   become: true
   when: ( systemd_resolved_dnsstublistener | regex_search("no|false|0", ignorecase=True) )
 
-- name: ensure resolv.conf (stub)
+- name: Ensure resolv.conf (stub)
   ansible.builtin.file:
     src: /run/systemd/resolve/stub-resolv.conf
     dest: /etc/resolv.conf
