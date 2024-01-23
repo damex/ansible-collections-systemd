@@ -1,0 +1,2 @@
+# This file contains ignores rule violations for ansible-lint
+roles/systemd_timesyncd/tasks/package.yml var-naming[no-role-prefix]
