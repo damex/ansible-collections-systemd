@@ -1,7 +1,7 @@
 ---
 namespace: damex
 name: systemd
-version: 1.2.8
+version: 0.2.8
 readme: README.md
 authors:
   - Roman Kuzmitskii <ansible@damex.org>
