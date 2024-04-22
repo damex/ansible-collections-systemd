@@ -1,0 +1,32 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_timesyncd_service_name:
+        required: true
+        type: str
+      systemd_timesyncd_configuration_file:
+        required: true
+        type: str
+      systemd_timesyncd_ntp:
+        type: list
+        elements: str
+      systemd_timesyncd_fallbackntp:
+        type: list
+        elements: str
+      systemd_timesyncd_rootdistancemaxsec:
+        type: int
+      systemd_timesyncd_pollintervalminsec:
+        type: int
+      systemd_timesyncd_pollintervalmaxsec:
+        type: int
+      systemd_timesyncd_package_name:
+        required: true
+        type: str
+      systemd_timesyncd_package_version:
+        type: str
+      systemd_timesyncd_package_state:
+        type: str
+        choices:
+          - present
+          - absent
