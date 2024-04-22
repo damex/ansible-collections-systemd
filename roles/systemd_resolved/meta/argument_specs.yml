@@ -47,6 +47,8 @@ argument_specs:
       systemd_resolved_dnsstublistener:
         type: str
         choices:
+          - false
+          - true
           - tcp
           - udp
       systemd_resolved_readetchosts:
