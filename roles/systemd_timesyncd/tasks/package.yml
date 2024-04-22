@@ -3,7 +3,7 @@
   ansible.builtin.include_role:
     name: damex.apt.apt_packages
   vars:
-    apt_packages:
+    apt_packages: # noqa: var-naming[no-role-prefix]
       - name: "{{ systemd_timesyncd_package_name }}"
         version: "{{ systemd_timesyncd_package_version }}"
         state: "{{ systemd_timesyncd_package_state }}"
