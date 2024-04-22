@@ -1,0 +1,13 @@
+---
+- name: Ensure systemd oomd
+  tags:
+    - systemd_oomd
+    - systemd
+    - oomd
+  block:
+    - name: Ensure systemd oomd package
+      ansible.builtin.import_tasks: package.yml
+    - name: Ensure systemd oomd oomd.conf
+      ansible.builtin.import_tasks: oomd.conf.yml
+    - name: Ensure systemd oomd systemd service
+      ansible.builtin.import_tasks: systemd_service.yml

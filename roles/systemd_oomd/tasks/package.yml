@@ -1,0 +1,9 @@
+---
+- name: Ensure systemd oomd package
+  ansible.builtin.include_role:
+    name: damex.apt.apt_packages
+  vars:
+    apt_packages: # noqa: var-naming[no-role-prefix]
+      - name: "{{ systemd_oomd_package_name }}"
+        version: "{{ systemd_oomd_package_version }}"
+        state: "{{ systemd_oomd_package_state }}"

@@ -1,0 +1,9 @@
+---
+systemd_oomd_service_name: systemd-oomd
+systemd_oomd_configuration_file: /etc/systemd/oomd.conf
+systemd_oomd_swapusedlimit: 90%
+systemd_oomd_defaultmemorypressurelimit: 60%
+systemd_oomd_defaultmemorypressuredurationsec: 30s
+systemd_oomd_package_name: systemd-oomd
+systemd_oomd_package_version: ""
+systemd_oomd_package_state: present

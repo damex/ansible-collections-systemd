@@ -1,0 +1,7 @@
+---
+- name: Ensure systemd service {{ systemd_oomd_service_name }}
+  ansible.builtin.include_role:
+    name: damex.systemd.systemd_service
+  vars:
+    systemd_service_name: "{{ systemd_oomd_service_name }}"
+    systemd_service_restart_on: "{{ systemd_oomd_conf.changed }}"
