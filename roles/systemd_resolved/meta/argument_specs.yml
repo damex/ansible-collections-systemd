@@ -1,0 +1,53 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_resolved_service_name:
+        required: true
+        type: str
+      systemd_resolved_configuration_file:
+        required: true
+        type: str
+      systemd_resolved_dns:
+        type: list
+        elements: str
+      systemd_resolved_fallbackdns:
+        type: list
+        elements: str
+      systemd_resolved_llmnr:
+        type: str
+        choices:
+          - false
+          - true
+          - resolve
+      systemd_resolved_multicastdns:
+        type: str
+        choices:
+          - false
+          - true
+          - resolve
+      systemd_resolved_dnssec:
+        type: str
+        choices:
+          - false
+          - true
+          - allow-downgrade
+      systemd_resolved_dnsovertls:
+        type: str
+        choices:
+          - false
+          - true
+          - opportunistic
+      systemd_resolved_cache:
+        type: str
+        choices:
+          - false
+          - true
+          - no-negative
+      systemd_resolved_dnsstublistener:
+        type: str
+        choices:
+          - tcp
+          - udp
+      systemd_resolved_readetchosts:
+        type: bool
