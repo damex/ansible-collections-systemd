@@ -1,0 +1,10 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_timedated_service_name:
+        required: true
+        type: str
+      systemd_timedated_timezone_name:
+        required: true
+        type: str
