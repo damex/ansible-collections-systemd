@@ -7,6 +7,8 @@
   block:
     - name: Ensure systemd resolved environment facts are collected
       ansible.builtin.import_tasks: environment.yml
+    - name: Ensure systemd resolved package
+      ansible.builtin.import_tasks: package.yml
     - name: Ensure systemd resolved resolved.conf
       ansible.builtin.import_tasks: resolved.conf.yml
     - name: Ensure systemd resolved systemd service
