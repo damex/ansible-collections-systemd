@@ -1,0 +1,10 @@
+---
+- name: Ensure oomd.conf
+  ansible.builtin.template:
+    src: oomd.conf.j2
+    dest: "{{ systemd_oomd_configuration_file }}"
+    group: root
+    owner: root
+    mode: "0644"
+  register: systemd_oomd_conf
+  become: true

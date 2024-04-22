@@ -1,0 +1,5 @@
+{{ ansible_managed | comment }}
+[OOM]
+SwapUsedLimit = {{ systemd_oomd_swapusedlimit }}
+DefaultMemoryPressureLimit = {{ systemd_oomd_defaultmemorypressurelimit }}
+DefaultMemoryPressureDurationSec = {{ systemd_oomd_defaultmemorypressuredurationsec }}
