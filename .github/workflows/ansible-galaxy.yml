@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
-      - run: pip install ansible-core==2.14.2
-      - run: ansible-galaxy collection build
-      - run: ansible-galaxy collection publish --api-key ${{ secrets.GALAXY_API_KEY }} damex-systemd-*.tar.gz
+          python-version: "3.11"
+      - run: pip install --user pipenv
+      - run: make pipenv
+      - run: pipenv run ansible-galaxy collection build
+      - run: pipenv run ansible-galaxy collection publish --api-key ${{ secrets.GALAXY_API_KEY }} damex-digitalocean-*.tar.gz
