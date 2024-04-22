@@ -51,3 +51,13 @@ argument_specs:
           - udp
       systemd_resolved_readetchosts:
         type: bool
+      systemd_resolved_package_name:
+        required: true
+        type: str
+      systemd_resolved_package_version:
+        type: str
+      systemd_resolved_package_state:
+        type: str
+        choices:
+          - present
+          - absent
