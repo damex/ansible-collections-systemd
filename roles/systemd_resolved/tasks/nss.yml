@@ -1,0 +1,14 @@
+---
+- name: "ensure systemd resolved nss configuration is correct"
+  ansible.builtin.fail:
+    msg: "Please add resolve to nss_configuration.hosts"
+  when:
+    - "'resolve' not in nss_configuration.hosts"
+
+- name: "ensure nss-resolve package"
+  ansible.builtin.apt:
+    name: "libnss-resolve"
+
+- name: "ensure systemd resolved nss"
+  include_role:
+    name: "nss"

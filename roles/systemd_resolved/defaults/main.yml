@@ -11,6 +11,7 @@ systemd_resolved_dnsovertls: false
 systemd_resolved_cache: true
 systemd_resolved_dnsstublistener: udp
 systemd_resolved_readetchosts: true
+systemd_resolved_nss: false
 systemd_resolved_package_name: systemd-resolved
 systemd_resolved_package_version: ""
 systemd_resolved_package_state: present

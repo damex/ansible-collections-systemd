@@ -7,6 +7,7 @@
     force: true
   become: true
   when: not systemd_resolved_dnsstublistener
+    and systemd_resolved_nss
 
 - name: Ensure stub resolv.conf
   ansible.builtin.file:
@@ -16,3 +17,4 @@
     force: true
   become: true
   when: systemd_resolved_dnsstublistener
+    and not systemd_resolved_nss
