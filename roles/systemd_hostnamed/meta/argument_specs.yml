@@ -1,0 +1,7 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_hostnamed_service_name:
+        required: true
+        type: str
