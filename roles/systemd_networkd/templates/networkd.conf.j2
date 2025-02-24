@@ -1,7 +1,18 @@
 {{ ansible_managed | comment }}
+
 [Network]
 SpeedMeter = {{ systemd_networkd_network_speedmeter }}
 SpeedMeterIntervalSec = {{ systemd_networkd_network_speedmeterintervalsec }}
-[DHCP]
-DUIDType = {{ systemd_networkd_dhcp_duidtype }}
-DUIDRawData = {{ systemd_networkd_dhcp_duidtyperawdata }}
+ManageForeignRoutingPolicyRules = {{ systemd_networkd_network_manageforeignroutingpolicyrules }}
+ManageForeignRoutes = {{ systemd_networkd_network_manageforeignroutes }}
+RouteTable = {{ systemd_networkd_network_routetable }}
+
+[DHCPv4]
+DUIDType = {{ systemd_networkd_dhcpv4_duidtype }}
+DUIDRawData = {{ systemd_networkd_dhcpv4_duidtyperawdata }}
+UseDomains = {{ systemd_networkd_dhcpv4_usedomains }}
+
+[DHCPv6]
+DUIDType = {{ systemd_networkd_dhcpv6_duidtype }}
+DUIDRawData = {{ systemd_networkd_dhcpv6_duidtyperawdata }}
+UseDomains = {{ systemd_networkd_dhcpv6_usedomains }}

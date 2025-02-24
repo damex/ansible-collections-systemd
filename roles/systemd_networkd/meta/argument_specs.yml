@@ -1,0 +1,36 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_networkd_service_name:
+        type: str
+      systemd_networkd_configuration_file:
+        type: str
+      systemd_networkd_network_speedmeter:
+        type: bool
+      systemd_networkd_network_speedmeterintervalsec:
+        type: str
+      systemd_networkd_network_manageforeignroutingpolicyrules:
+        type: str
+      systemd_networkd_network_manageforeignroutes:
+        type: str
+      systemd_networkd_network_routetable:
+        type: str
+      systemd_networkd_dhcp_duidtype:
+        type: str
+      systemd_networkd_dhcp_duidtyperawdata:
+        type: str
+      systemd_networkd_dhcp_usedomains:
+        type: str
+      systemd_networkd_dhcpv4_duidtype:
+        type: str
+      systemd_networkd_dhcpv4_duidtyperawdata:
+        type: str
+      systemd_networkd_dhcpv4_usedomains:
+        type: str
+      systemd_networkd_dhcpv6_duidtype:
+        type: str
+      systemd_networkd_dhcpv6_duidtyperawdata:
+        type: str
+      systemd_networkd_dhcpv6_usedomains:
+        type: str
