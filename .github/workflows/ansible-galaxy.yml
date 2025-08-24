@@ -5,7 +5,7 @@ on: # yamllint disable-line rule:truthy
     paths:
       - galaxy.yml
     branches:
-      - main
+      - production
 
 jobs:
   ansible-galaxy:
