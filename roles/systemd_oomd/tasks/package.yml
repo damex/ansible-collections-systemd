@@ -7,3 +7,14 @@
       - name: "{{ systemd_oomd_package_name }}"
         version: "{{ systemd_oomd_package_version }}"
         state: "{{ systemd_oomd_package_state }}"
+  when: ansible_pkg_mgr == "apt"
+
+- name: Ensure systemd oomd package
+  ansible.builtin.include_role:
+    name: damex.yum.yum_packages
+  vars:
+    yum_packages: # noqa: var-naming[no-role-prefix]
+      - name: "{{ systemd_oomd_package_name }}"
+        version: "{{ systemd_oomd_package_version }}"
+        state: "{{ systemd_oomd_package_state }}"
+  when: ansible_pkg_mgr == "yum" or ansible_pkg_mgr == "dnf"
