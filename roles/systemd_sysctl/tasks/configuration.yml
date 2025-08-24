@@ -1,0 +1,27 @@
+---
+- name: Ensure systemd sysctl sysctls present
+  ansible.builtin.template:
+    src: sysctl.conf.j2
+    dest: "{{ systemd_sysctl_configuration_directory }}/{{ systemd_sysctl_sysctl.name }}.conf"
+    group: root
+    owner: root
+    mode: "0644"
+  loop: "{{ systemd_sysctl_sysctls }}"
+  loop_control:
+    label: "{{ systemd_sysctl_sysctl.name }}"
+    loop_var: systemd_sysctl_sysctl
+  when: systemd_sysctl_sysctl.state | default(systemd_sysctl_state) == "present"
+  become: true
+  register: systemd_sysctl_sysctls_present_state
+
+- name: Ensure systemd sysctl sysctls absent
+  ansible.builtin.file:
+    path: "{{ systemd_sysctl_configuration_directory }}/{{ systemd_sysctl_sysctl.name }}.conf"
+    state: absent
+  loop: "{{ systemd_sysctl_sysctls }}"
+  loop_control:
+    label: "{{ systemd_sysctl_sysctl.name }}"
+    loop_var: systemd_sysctl_sysctl
+  when: systemd_sysctl_sysctl.state | default(systemd_sysctl_state) == "absent"
+  become: true
+  register: systemd_sysctl_sysctls_absent_state

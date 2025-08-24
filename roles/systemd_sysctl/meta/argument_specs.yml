@@ -1,0 +1,27 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_sysctl_service_name:
+        type: str
+      systemd_sysctl_sysctls:
+        type: list
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          value:
+            type: str
+          state:
+            type: str
+            choices:
+              - present
+              - absent
+      systemd_sysctl_configuration_directory:
+        type: str
+      systemd_sysctl_state:
+        type: str
+        choices:
+          - present
+          - absent

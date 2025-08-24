@@ -1,0 +1,5 @@
+---
+systemd_sysctl_sysctls: []
+systemd_sysctl_service_name: systemd-sysctl
+systemd_sysctl_configuration_directory: /etc/sysctl.d
+systemd_sysctl_state: present
