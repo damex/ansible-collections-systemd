@@ -1,0 +1,16 @@
+---
+- name: Ensure systemd firewalld zones
+  ansible.posix.firewalld:
+    forward: "{{ systemd_firewalld_zone.forward | default(systemd_firewalld_zone_forward) }}"
+    permanent: "{{ systemd_firewalld_zone.permanent | default(systemd_firewalld_zone_permanent) }}"
+    zone: "{{ systemd_firewalld_zone.name }}"
+    state: "{{ systemd_firewalld_zone.state | default(systemd_firewalld_zone_state) }}"
+  loop: "{{ systemd_firewalld_zones }}"
+  loop_control:
+    label: "{{ systemd_firewalld_zone.name }}"
+    loop_var: systemd_firewalld_zone
+  notify: Ensure systemd firewalld is reloaded
+  become: true
+
+- name: Ensure handlers are flushed
+  ansible.builtin.meta: flush_handlers

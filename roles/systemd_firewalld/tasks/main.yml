@@ -1,0 +1,14 @@
+---
+- name: Ensure systemd firewalld
+  tags:
+    - firewalld
+    - systemd_firewalld
+  block:
+    - name: Ensure systemd firewalld package
+      ansible.builtin.import_tasks: package.yml
+    - name: Ensure systemd firewalld systemd
+      ansible.builtin.import_tasks: systemd.yml
+    - name: Ensure systemd firewalld zones
+      ansible.builtin.import_tasks: zones.yml
+    - name: Ensure systemd firewalld rules
+      ansible.builtin.import_tasks: rules.yml
