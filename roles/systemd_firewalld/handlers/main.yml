@@ -1,0 +1,5 @@
+---
+- name: Ensure systemd firewalld is reloaded
+  ansible.builtin.command: firewall-cmd --reload
+  changed_when: false
+  become: true

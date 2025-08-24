@@ -12,5 +12,6 @@ tags:
   - systemd
 repository: https://github.com/damex/ansible-collections-systemd
 dependencies:
+  ansible.posix: "*"
   damex.apt: "*"
   damex.yum: "*"

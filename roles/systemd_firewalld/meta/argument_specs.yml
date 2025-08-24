@@ -1,0 +1,73 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_firewalld_package_name:
+        type: str
+      systemd_firewalld_package_version:
+        type: str
+      systemd_firewalld_package_state:
+        type: str
+        choices:
+          - present
+          - absent
+      systemd_firewalld_service_name:
+        type: str
+      systemd_firewalld_rule_immediate:
+        type: bool
+      systemd_firewalld_rule_permanent:
+        type: bool
+      systemd_firewalld_rule_zone:
+        type: str
+      systemd_firewalld_rule_rich_rule:
+        type: str
+      systemd_firewalld_rule_state:
+        type: str
+        choices:
+          - enabled
+          - disabled
+      systemd_firewalld_rules:
+        type: list
+        elements: dict
+        options:
+          port:
+            type: str
+          protocol:
+            type: str
+          immediate:
+            type: bool
+          interface:
+            type: str
+          permanent:
+            type: bool
+          rich_rule:
+            type: str
+          zone:
+            type: str
+          source:
+            type: str
+          state:
+            type: str
+            choices:
+              - enabled
+              - disabled
+      systemd_firewalld_zones:
+        type: list
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          forward:
+            type: bool
+      systemd_firewalld_zone_forward:
+        type: bool
+      systemd_firewalld_zone_permanent:
+        type: bool
+      systemd_firewalld_zone_state:
+        type: str
+        choices:
+          - enabled
+          - disabled
+          - present
+          - absent
