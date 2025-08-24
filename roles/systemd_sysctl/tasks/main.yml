@@ -1,0 +1,10 @@
+---
+- name: Ensure systemd sysctl
+  tags:
+    - sysctl
+    - systemd_sysctl
+  block:
+    - name: Ensure systemd sysctl configuration
+      ansible.builtin.import_tasks: configuration.yml
+    - name: Ensure systemd sysctl systemd service
+      ansible.builtin.import_tasks: systemd.yml

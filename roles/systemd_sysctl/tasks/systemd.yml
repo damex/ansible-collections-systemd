@@ -1,0 +1,7 @@
+---
+- name: Ensure systemd service {{ systemd_sysctl_service_name }}
+  ansible.builtin.include_role:
+    name: damex.systemd.systemd_service
+  vars:
+    systemd_service_name: "{{ systemd_sysctl_service_name }}"
+    systemd_service_restart_on: "{{ systemd_sysctl_sysctls_present_state.changed or systemd_sysctl_sysctls_absent_state.changed }}"
