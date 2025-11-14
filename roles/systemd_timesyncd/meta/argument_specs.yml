@@ -19,7 +19,6 @@ argument_specs:
       systemd_timesyncd_pollintervalmaxsec:
         type: int
       systemd_timesyncd_package_name:
-        required: true
         type: str
       systemd_timesyncd_package_version:
         type: str
