@@ -3,7 +3,6 @@ argument_specs:
   main:
     options:
       systemd_resolved_service_name:
-        required: true
         type: str
       systemd_resolved_configuration_file:
         type: str
