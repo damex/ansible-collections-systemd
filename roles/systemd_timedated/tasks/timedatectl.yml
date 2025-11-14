@@ -16,7 +16,7 @@
   register: systemd_timedated_timedatectl_current_timezone
   changed_when: false
 
-- name: Ensure timedatectl timezone
+- name: Ensure timedatectl timezone {{ systemd_timedated_timezone_name }}
   ansible.builtin.command:
     cmd: timedatectl set-timezone {{ systemd_timedated_timezone_name }}
   when: systemd_timedated_timezone_name not in systemd_timedated_timedatectl_current_timezone.stdout
