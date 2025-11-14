@@ -1,0 +1,19 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_service_name:
+        required: true
+        type: str
+      systemd_service_enabled:
+        type: bool
+      systemd_service_masked:
+        type: bool
+      systemd_service_state:
+        type: str
+      systemd_service_reload_on:
+        type: bool
+      systemd_service_restart_on:
+        type: bool
+      systemd_service_remote_host:
+        type: str
