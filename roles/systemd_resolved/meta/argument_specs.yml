@@ -47,7 +47,6 @@ argument_specs:
       systemd_resolved_readetchosts:
         type: bool
       systemd_resolved_package_name:
-        required: true
         type: str
       systemd_resolved_package_version:
         type: str
