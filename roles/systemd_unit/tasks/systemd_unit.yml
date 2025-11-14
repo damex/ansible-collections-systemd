@@ -21,7 +21,8 @@
     state: "{{ systemd_unit_override | ternary('directory', 'absent') }}"
   notify: Ensure systemd configuration is reloaded
   when:
-    - systemd_unit_override_name
+    - systemd_unit_override_name is defined
+    - systemd_unit_override_name | length > 0
   become: true
 
 - name: Ensure override for systemd unit {{ systemd_unit_name }}
@@ -33,6 +34,7 @@
     mode: "0644"
   notify: Ensure systemd configuration is reloaded
   when:
-    - systemd_unit_override_name
+    - systemd_unit_override_name is defined
+    - systemd_unit_override_name | length > 0
   register: systemd_unit_override_state
   become: true
