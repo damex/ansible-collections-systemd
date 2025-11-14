@@ -6,7 +6,6 @@ argument_specs:
         required: true
         type: str
       systemd_resolved_configuration_file:
-        required: true
         type: str
       systemd_resolved_dns:
         type: list
