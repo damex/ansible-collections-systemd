@@ -38,3 +38,6 @@
     - systemd_unit_override_name | length > 0
   register: systemd_unit_override_state
   become: true
+
+- name: Ensure handlers are flushed
+  ansible.builtin.meta: flush_handlers
