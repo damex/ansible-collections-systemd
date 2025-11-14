@@ -1,5 +1,4 @@
 ---
-
 systemd_unit_directory: /etc/systemd/system
 systemd_unit_file: "{{ systemd_unit_directory }}/{{ systemd_unit_name }}.{{ systemd_unit_type }}"
 systemd_unit_override_directory: "{{ systemd_unit_directory }}/{{ systemd_unit_name }}.{{ systemd_unit_type }}.d"
