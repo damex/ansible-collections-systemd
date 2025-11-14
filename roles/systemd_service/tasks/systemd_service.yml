@@ -6,3 +6,4 @@
     masked: "{{ systemd_service_masked }}"
     enabled: "{{ systemd_service_enabled }}"
   become: true
+  delegate_to: "{{ systemd_service_remote_host | default(omit) }}"
