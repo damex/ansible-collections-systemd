@@ -8,7 +8,7 @@ argument_specs:
         type: str
       systemd_journald_storage:
         type: str
-        choice:
+        choices:
           - volatile
           - persistent
           - auto
@@ -19,7 +19,7 @@ argument_specs:
         type: bool
       systemd_journald_splitmode:
         type: str
-        choice:
+        choices:
           - uid
           - none
       systemd_journald_ratelimitinterval:
@@ -60,7 +60,7 @@ argument_specs:
         type: bool
       systemd_journald_maxlevelstore:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
@@ -71,7 +71,7 @@ argument_specs:
           - debug
       systemd_journald_maxlevelsyslog:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
@@ -82,7 +82,7 @@ argument_specs:
           - debug
       systemd_journald_maxlevelkmsg:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
@@ -93,7 +93,7 @@ argument_specs:
           - debug
       systemd_journald_maxlevelconsole:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
@@ -104,7 +104,7 @@ argument_specs:
           - debug
       systemd_journald_maxlevelwall:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
@@ -115,7 +115,7 @@ argument_specs:
           - debug
       systemd_journald_maxlevelsocket:
         type: str
-        choice:
+        choices:
           - emerg
           - alert
           - crit
