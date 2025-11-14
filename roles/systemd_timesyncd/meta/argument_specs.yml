@@ -3,10 +3,8 @@ argument_specs:
   main:
     options:
       systemd_timesyncd_service_name:
-        required: true
         type: str
       systemd_timesyncd_configuration_file:
-        required: true
         type: str
       systemd_timesyncd_ntp:
         type: list
