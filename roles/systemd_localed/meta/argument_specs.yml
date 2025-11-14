@@ -1,0 +1,8 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_localed_service_name:
+        type: str
+      systemd_localed_locale_name:
+        type: str
