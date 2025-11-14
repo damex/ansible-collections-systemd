@@ -1,0 +1,26 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_unit_name:
+        required: true
+        type: str
+      systemd_unit_type:
+        required: true
+        type: str
+        choices:
+          - service
+          - timer
+      systemd_unit_override:
+        type: bool
+      systemd_unit_override_name:
+        type: str
+      systemd_unit_generic_options:
+        type: list
+        elements: str
+      systemd_unit_options:
+        type: list
+        elements: str
+      systemd_unit_install_options:
+        type: list
+        elements: str
