@@ -7,7 +7,13 @@ systemd_journald_seal: true
 systemd_journald_splitmode: uid
 systemd_journald_ratelimitinterval: 30s
 systemd_journald_ratelimitburst: 10000
+systemd_journald_systemmaxuse: ""
+systemd_journald_systemkeepfree: ""
+systemd_journald_systemmaxfilesize: ""
 systemd_journald_systemmaxfiles: 100
+systemd_journald_runtimemaxuse: ""
+systemd_journald_runtimekeepfree: ""
+systemd_journald_runtimemaxfilesize: ""
 systemd_journald_runtimemaxfiles: 100
 systemd_journald_maxfilesec: 1month
 systemd_journald_maxretentionsec: ""
