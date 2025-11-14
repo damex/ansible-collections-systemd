@@ -5,5 +5,5 @@
   vars:
     apt_packages: # noqa: var-naming[no-role-prefix]
       - name: "{{ systemd_timesyncd_package_name }}"
-        version: "{{ systemd_timesyncd_package_version }}"
+        version: "{{ systemd_timesyncd_package_version | default(omit) }}"
         state: "{{ systemd_timesyncd_package_state }}"
