@@ -6,7 +6,7 @@
     state: link
     force: true
   become: true
-  when: systemd_resolved_dnsstublistener == false
+  when: not systemd_resolved_dnsstublistener
 
 - name: Ensure stub resolv.conf
   ansible.builtin.file:
