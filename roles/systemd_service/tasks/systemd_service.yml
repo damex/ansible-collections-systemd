@@ -3,5 +3,6 @@
   ansible.builtin.systemd:
     name: "{{ systemd_service_name }}"
     state: "{{ 'restarted' if systemd_service_restart_on else 'reloaded' if systemd_service_reload_on else systemd_service_state }}"
+    masked: "{{ systemd_service_masked }}"
     enabled: "{{ systemd_service_enabled }}"
   become: true
