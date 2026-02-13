@@ -5,7 +5,7 @@ argument_specs:
       systemd_timesyncd_service_name:
         type: str
       systemd_timesyncd_configuration_file:
-        type: str
+        type: path
       systemd_timesyncd_ntp:
         type: list
         elements: str
