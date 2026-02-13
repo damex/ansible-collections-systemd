@@ -31,7 +31,7 @@
   when:
     - systemd_unit_state == "present"
     - not systemd_unit_override_name
-  register: systemd_unit_present_state
+  register: systemd_unit_file_state
   become: true
 
 - name: Ensure override directory for systemd unit {{ systemd_unit_name }}
@@ -59,7 +59,7 @@
     - systemd_unit_state == "present"
     - systemd_unit_override_name is defined
     - systemd_unit_override_name | length > 0
-  register: systemd_unit_override_state
+  register: systemd_unit_override_file_state
   become: true
 
 - name: Ensure handlers are flushed
