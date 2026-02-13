@@ -2,8 +2,8 @@
 - name: Ensure systemd hostnamed
   tags:
     - hostnamed
-    - systemd_hostnamed
     - systemd
+    - systemd_hostnamed
   block:
     - name: Ensure systemd hostnamed hostname
       ansible.builtin.import_tasks: hostnamectl.yml

@@ -1,8 +1,8 @@
 ---
 - name: Ensure systemd timedated
   tags:
-    - systemd_timedated
     - systemd
+    - systemd_timedated
     - timedated
   block:
     - name: Ensure systemd timedated timezone

@@ -2,8 +2,8 @@
 - name: Ensure systemd journald
   tags:
     - journald
-    - systemd_journald
     - systemd
+    - systemd_journald
   block:
     - name: Ensure systemd journald journald.conf
       ansible.builtin.import_tasks: journald.conf.yml

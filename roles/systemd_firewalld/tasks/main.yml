@@ -2,6 +2,7 @@
 - name: Ensure systemd firewalld
   tags:
     - firewalld
+    - systemd
     - systemd_firewalld
   block:
     - name: Ensure systemd firewalld package

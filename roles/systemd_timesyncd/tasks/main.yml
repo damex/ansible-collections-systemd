@@ -1,8 +1,8 @@
 ---
 - name: Ensure systemd timesyncd
   tags:
-    - systemd_timesyncd
     - systemd
+    - systemd_timesyncd
     - timesyncd
   block:
     - name: Ensure systemd timesyncd environment facts are collected

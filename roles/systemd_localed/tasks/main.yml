@@ -2,8 +2,8 @@
 - name: Ensure systemd localed
   tags:
     - localed
-    - systemd_localed
     - systemd
+    - systemd_localed
   block:
     - name: Ensure systemd localed locale
       ansible.builtin.import_tasks: localectl.yml
