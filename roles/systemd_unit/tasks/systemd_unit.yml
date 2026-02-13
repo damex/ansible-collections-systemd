@@ -40,7 +40,7 @@
     owner: root
     group: root
     mode: "0644"
-    state: "{{ systemd_unit_override | ternary('directory', 'absent') }}"
+    state: "{{ (systemd_unit_override_name is defined and systemd_unit_override_name | length > 0) | ternary('directory', 'absent') }}"
   notify: Ensure systemd configuration is reloaded
   when:
     - systemd_unit_override_name is defined

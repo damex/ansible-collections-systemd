@@ -16,8 +16,6 @@ argument_specs:
         choices:
           - present
           - absent
-      systemd_unit_override:
-        type: bool
       systemd_unit_override_name:
         type: str
       systemd_unit_generic_options:
