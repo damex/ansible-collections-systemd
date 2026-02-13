@@ -5,7 +5,7 @@ argument_specs:
       systemd_journald_service_name:
         type: str
       systemd_journald_configuration_file:
-        type: str
+        type: path
       systemd_journald_storage:
         type: str
         choices:
