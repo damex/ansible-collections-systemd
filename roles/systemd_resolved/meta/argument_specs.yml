@@ -5,11 +5,14 @@ argument_specs:
       systemd_resolved_service_name:
         type: str
       systemd_resolved_configuration_file:
-        type: str
+        type: path
       systemd_resolved_dns:
         type: list
         elements: str
       systemd_resolved_fallbackdns:
+        type: list
+        elements: str
+      systemd_resolved_domains:
         type: list
         elements: str
       systemd_resolved_llmnr:
