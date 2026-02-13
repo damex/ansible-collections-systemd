@@ -7,7 +7,7 @@ argument_specs:
         type: str
       systemd_oomd_configuration_file:
         required: true
-        type: str
+        type: path
       systemd_oomd_swapusedlimit:
         type: str
       systemd_oomd_defaultmemorypressurelimit:
