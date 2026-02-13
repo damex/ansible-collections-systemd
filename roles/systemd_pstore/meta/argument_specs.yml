@@ -1,0 +1,16 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_pstore_service_name:
+        type: str
+      systemd_pstore_configuration_file:
+        type: path
+      systemd_pstore_storage:
+        type: str
+        choices:
+          - none
+          - external
+          - journal
+      systemd_pstore_unlink:
+        type: bool
