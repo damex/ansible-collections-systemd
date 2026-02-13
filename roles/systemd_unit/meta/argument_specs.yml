@@ -2,6 +2,8 @@
 argument_specs:
   main:
     options:
+      systemd_unit_directory:
+        type: path
       systemd_unit_name:
         required: true
         type: str
@@ -11,6 +13,8 @@ argument_specs:
         choices:
           - service
           - timer
+      systemd_unit_file:
+        type: path
       systemd_unit_state:
         type: str
         choices:
@@ -18,6 +22,16 @@ argument_specs:
           - absent
       systemd_unit_override_name:
         type: str
+      systemd_unit_override_directory:
+        type: path
+      systemd_unit_override_file:
+        type: path
+      systemd_unit_types_supported:
+        type: list
+        elements: str
+        choices:
+          - service
+          - timer
       systemd_unit_generic_options:
         type: list
         elements: str
