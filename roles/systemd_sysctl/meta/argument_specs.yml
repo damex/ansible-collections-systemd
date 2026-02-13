@@ -19,7 +19,7 @@ argument_specs:
               - present
               - absent
       systemd_sysctl_configuration_directory:
-        type: str
+        type: path
       systemd_sysctl_state:
         type: str
         choices:
