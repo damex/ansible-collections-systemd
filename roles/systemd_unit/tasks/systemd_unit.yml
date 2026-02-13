@@ -1,4 +1,25 @@
 ---
+- name: Ensure systemd unit is absent {{ systemd_unit_name }}
+  ansible.builtin.file:
+    path: "{{ systemd_unit_file }}"
+    state: absent
+  notify: Ensure systemd configuration is reloaded
+  when:
+    - systemd_unit_state == "absent"
+    - not systemd_unit_override_name
+  become: true
+
+- name: Ensure override for systemd unit is absent {{ systemd_unit_name }}
+  ansible.builtin.file:
+    path: "{{ systemd_unit_override_file }}"
+    state: absent
+  notify: Ensure systemd configuration is reloaded
+  when:
+    - systemd_unit_state == "absent"
+    - systemd_unit_override_name is defined
+    - systemd_unit_override_name | length > 0
+  become: true
+
 - name: Ensure systemd unit {{ systemd_unit_name }}
   ansible.builtin.template:
     src: unit.j2
@@ -8,8 +29,9 @@
     mode: "0644"
   notify: Ensure systemd configuration is reloaded
   when:
+    - systemd_unit_state == "present"
     - not systemd_unit_override_name
-  register: systemd_unit_state
+  register: systemd_unit_present_state
   become: true
 
 - name: Ensure override directory for systemd unit {{ systemd_unit_name }}
@@ -34,6 +56,7 @@
     mode: "0644"
   notify: Ensure systemd configuration is reloaded
   when:
+    - systemd_unit_state == "present"
     - systemd_unit_override_name is defined
     - systemd_unit_override_name | length > 0
   register: systemd_unit_override_state

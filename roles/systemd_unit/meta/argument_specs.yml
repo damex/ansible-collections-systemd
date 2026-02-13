@@ -11,6 +11,11 @@ argument_specs:
         choices:
           - service
           - timer
+      systemd_unit_state:
+        type: str
+        choices:
+          - present
+          - absent
       systemd_unit_override:
         type: bool
       systemd_unit_override_name:
