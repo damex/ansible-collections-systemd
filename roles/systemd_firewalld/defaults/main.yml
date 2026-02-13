@@ -1,6 +1,5 @@
 ---
 systemd_firewalld_package_name: firewalld
-systemd_firewalld_package_version: ""
 systemd_firewalld_package_state: present
 systemd_firewalld_service_name: firewalld
 systemd_firewalld_rule_immediate: true
