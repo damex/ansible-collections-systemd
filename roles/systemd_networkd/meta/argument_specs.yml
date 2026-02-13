@@ -5,7 +5,7 @@ argument_specs:
       systemd_networkd_service_name:
         type: str
       systemd_networkd_configuration_file:
-        type: str
+        type: path
       systemd_networkd_network_speedmeter:
         type: bool
       systemd_networkd_network_speedmeterintervalsec:
