@@ -22,3 +22,4 @@ jobs:
       - run: pip install --user pipenv
       - run: pipenv install --deploy
       - run: pipenv run lint
+      - run: pipenv run lint-templates
