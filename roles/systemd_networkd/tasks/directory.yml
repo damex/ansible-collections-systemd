@@ -1,0 +1,9 @@
+---
+- name: Ensure systemd networkd configurations directory
+  ansible.builtin.file:
+    path: "{{ systemd_networkd_configurations_directory }}"
+    owner: root
+    group: root
+    mode: "0755"
+    state: directory
+  become: true

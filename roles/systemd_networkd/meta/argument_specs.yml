@@ -6,25 +6,114 @@ argument_specs:
         type: str
       systemd_networkd_configuration_file:
         type: path
-      systemd_networkd_network_speedmeter:
-        type: bool
-      systemd_networkd_network_speedmeterintervalsec:
+      systemd_networkd_configurations_directory:
+        type: path
+      systemd_networkd_package_name:
         type: str
-      systemd_networkd_network_manageforeignroutingpolicyrules:
-        type: bool
-      systemd_networkd_network_manageforeignroutes:
-        type: bool
-      systemd_networkd_network_routetable:
+      systemd_networkd_package_version:
         type: str
-      systemd_networkd_dhcpv4_duidtype:
+      systemd_networkd_package_state:
         type: str
-      systemd_networkd_dhcpv4_duidtyperawdata:
-        type: str
-      systemd_networkd_dhcpv4_usedomains:
-        type: str
-      systemd_networkd_dhcpv6_duidtype:
-        type: str
-      systemd_networkd_dhcpv6_duidtyperawdata:
-        type: str
-      systemd_networkd_dhcpv6_usedomains:
-        type: str
+        choices:
+          - present
+          - absent
+      systemd_networkd_conf_configuration:
+        type: dict
+        options:
+          Network:
+            type: dict
+            options:
+              SpeedMeter:
+                type: bool
+              SpeedMeterIntervalSec:
+                type: str
+              ManageForeignRoutingPolicyRules:
+                type: bool
+              ManageForeignRoutes:
+                type: bool
+              RouteTable:
+                type: str
+          DHCPv4:
+            type: dict
+            options:
+              DUIDType:
+                type: str
+              DUIDRawData:
+                type: str
+              UseDomains:
+                type: str
+          DHCPv6:
+            type: dict
+            options:
+              DUIDType:
+                type: str
+              DUIDRawData:
+                type: str
+              UseDomains:
+                type: str
+      systemd_networkd_netdevs_configuration:
+        type: list
+        elements: dict
+        options:
+          NetDev:
+            type: dict
+            options:
+              Name:
+                type: str
+              Kind:
+                type: str
+          Bond:
+            type: dict
+            options:
+              Mode:
+                type: str
+              MIIMonitorSec:
+                type: str
+              LACPTransmitRate:
+                type: str
+              TransmitHashPolicy:
+                type: str
+      systemd_networkd_networks_configuration:
+        type: list
+        elements: dict
+        options:
+          Match:
+            type: dict
+            options:
+              Name:
+                type: str
+          Network:
+            type: dict
+            options:
+              Gateway:
+                type: str
+              DNS:
+                type: str
+              Bond:
+                type: str
+              LinkLocalAddressing:
+                type: str
+              IPv6AcceptRA:
+                type: str
+          Address:
+            type: list
+            elements: dict
+            options:
+              Address:
+                type: str
+          Route:
+            type: list
+            elements: dict
+            options:
+              Gateway:
+                type: str
+              Table:
+                type: int
+          RoutingPolicyRule:
+            type: list
+            elements: dict
+            options:
+              From:
+                type: str
+              Table:
+                type: int

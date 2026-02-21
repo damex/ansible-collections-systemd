@@ -1,0 +1,10 @@
+---
+- name: Ensure systemd networkd package
+  ansible.builtin.include_role:
+    name: damex.yum.yum_packages
+  vars:
+    yum_packages: # noqa: var-naming[no-role-prefix]
+      - name: "{{ systemd_networkd_package_name }}"
+        version: "{{ systemd_networkd_package_version | default(omit) }}"
+        state: "{{ systemd_networkd_package_state }}"
+  when: ansible_facts['pkg_mgr'] == "yum" or ansible_facts['pkg_mgr'] == "dnf"

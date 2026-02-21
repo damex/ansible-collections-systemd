@@ -1,3 +1,8 @@
 ---
 systemd_networkd_service_name: systemd-networkd
 systemd_networkd_configuration_file: /etc/systemd/networkd.conf
+systemd_networkd_configurations_directory: /etc/systemd/network
+systemd_networkd_package_name: systemd-networkd
+systemd_networkd_package_state: present
+systemd_networkd_netdevs_configuration: []
+systemd_networkd_networks_configuration: []
