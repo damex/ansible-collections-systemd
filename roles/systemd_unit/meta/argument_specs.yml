@@ -32,12 +32,134 @@ argument_specs:
         choices:
           - service
           - timer
-      systemd_unit_generic_options:
-        type: list
-        elements: str
-      systemd_unit_options:
-        type: list
-        elements: str
-      systemd_unit_install_options:
-        type: list
-        elements: str
+      systemd_unit_configuration:
+        type: dict
+        options:
+          Unit:
+            type: dict
+            options:
+              Description:
+                type: str
+              Documentation:
+                type: raw
+              After:
+                type: raw
+              Before:
+                type: raw
+              Wants:
+                type: raw
+              Requires:
+                type: raw
+              BindsTo:
+                type: raw
+              Conflicts:
+                type: raw
+              ConditionPathExists:
+                type: str
+              AssertPathExists:
+                type: str
+          Service:
+            type: dict
+            options:
+              Type:
+                type: str
+                choices:
+                  - simple
+                  - exec
+                  - forking
+                  - oneshot
+                  - dbus
+                  - notify
+                  - idle
+              ExecStart:
+                type: raw
+              ExecStartPre:
+                type: raw
+              ExecStartPost:
+                type: raw
+              ExecStop:
+                type: raw
+              ExecReload:
+                type: raw
+              Restart:
+                type: str
+                choices:
+                  - "no"
+                  - on-success
+                  - on-failure
+                  - on-abnormal
+                  - on-watchdog
+                  - on-abort
+                  - always
+              RestartSec:
+                type: str
+              TimeoutStartSec:
+                type: str
+              TimeoutStopSec:
+                type: str
+              User:
+                type: str
+              Group:
+                type: str
+              WorkingDirectory:
+                type: path
+              Environment:
+                type: raw
+              EnvironmentFile:
+                type: raw
+              StandardOutput:
+                type: str
+              StandardError:
+                type: str
+              PIDFile:
+                type: path
+              KillMode:
+                type: str
+              KillSignal:
+                type: str
+              OOMScoreAdjust:
+                type: int
+              LimitNOFILE:
+                type: str
+              PrivateTmp:
+                type: bool
+              PrivateNetwork:
+                type: bool
+              NoNewPrivileges:
+                type: bool
+              ProtectSystem:
+                type: str
+              ProtectHome:
+                type: str
+          Timer:
+            type: dict
+            options:
+              OnCalendar:
+                type: str
+              OnBootSec:
+                type: str
+              OnUnitActiveSec:
+                type: str
+              OnUnitInactiveSec:
+                type: str
+              OnActiveSec:
+                type: str
+              Unit:
+                type: str
+              Persistent:
+                type: bool
+              RandomizedDelaySec:
+                type: str
+              AccuracySec:
+                type: str
+          Install:
+            type: dict
+            options:
+              WantedBy:
+                type: raw
+              RequiredBy:
+                type: raw
+              Also:
+                type: raw
+              Alias:
+                type: str

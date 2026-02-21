@@ -7,6 +7,3 @@ systemd_unit_types_supported:
   - service
   - timer
 systemd_unit_state: present
-systemd_unit_generic_options: []
-systemd_unit_options: []
-systemd_unit_install_options: []
