@@ -4,5 +4,14 @@ galaxy_info:
   description: systemd resolved role
   license: GPLv2
   min_ansible_version: 2.19.0
-  platforms: []
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
 dependencies: []
