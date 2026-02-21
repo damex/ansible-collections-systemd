@@ -6,12 +6,18 @@ argument_specs:
         type: str
       systemd_oomd_configuration_file:
         type: path
-      systemd_oomd_swapusedlimit:
-        type: str
-      systemd_oomd_defaultmemorypressurelimit:
-        type: str
-      systemd_oomd_defaultmemorypressuredurationsec:
-        type: str
+      systemd_oomd_configuration:
+        type: dict
+        options:
+          OOM:
+            type: dict
+            options:
+              SwapUsedLimit:
+                type: str
+              DefaultMemoryPressureLimit:
+                type: str
+              DefaultMemoryPressureDurationSec:
+                type: str
       systemd_oomd_package_name:
         type: str
       systemd_oomd_package_version:

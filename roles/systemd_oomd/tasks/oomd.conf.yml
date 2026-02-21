@@ -1,10 +1,13 @@
 ---
-- name: Ensure oomd.conf
+- name: Ensure systemd oomd oomd.conf
   ansible.builtin.template:
-    src: oomd.conf.j2
+    src: "{{ role_path | dirname | dirname }}/templates/configuration.j2"
     dest: "{{ systemd_oomd_configuration_file }}"
     group: root
     owner: root
     mode: "0644"
-  register: systemd_oomd_conf
+  vars:
+    systemd_configuration: "{{ systemd_oomd_configuration }}"
   become: true
+  register: systemd_oomd_conf
+  when: systemd_oomd_configuration is defined
