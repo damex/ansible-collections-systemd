@@ -6,18 +6,24 @@ argument_specs:
         type: str
       systemd_timesyncd_configuration_file:
         type: path
-      systemd_timesyncd_ntp:
-        type: list
-        elements: str
-      systemd_timesyncd_fallbackntp:
-        type: list
-        elements: str
-      systemd_timesyncd_rootdistancemaxsec:
-        type: str
-      systemd_timesyncd_pollintervalminsec:
-        type: str
-      systemd_timesyncd_pollintervalmaxsec:
-        type: str
+      systemd_timesyncd_configuration:
+        type: dict
+        options:
+          Time:
+            type: dict
+            options:
+              NTP:
+                type: list
+                elements: str
+              FallbackNTP:
+                type: list
+                elements: str
+              RootDistanceMaxSec:
+                type: str
+              PollIntervalMinSec:
+                type: str
+              PollIntervalMaxSec:
+                type: str
       systemd_timesyncd_package_name:
         type: str
       systemd_timesyncd_package_version:
