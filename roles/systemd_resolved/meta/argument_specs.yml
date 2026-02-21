@@ -6,48 +6,60 @@ argument_specs:
         type: str
       systemd_resolved_configuration_file:
         type: path
-      systemd_resolved_dns:
-        type: list
-        elements: str
-      systemd_resolved_fallbackdns:
-        type: list
-        elements: str
-      systemd_resolved_domains:
-        type: list
-        elements: str
-      systemd_resolved_llmnr:
-        choices:
-          - false
-          - true
-          - resolve
-      systemd_resolved_multicastdns:
-        choices:
-          - false
-          - true
-          - resolve
-      systemd_resolved_dnssec:
-        choices:
-          - false
-          - true
-          - allow-downgrade
-      systemd_resolved_dnsovertls:
-        choices:
-          - false
-          - true
-          - opportunistic
-      systemd_resolved_cache:
-        choices:
-          - false
-          - true
-          - no-negative
-      systemd_resolved_dnsstublistener:
-        choices:
-          - false
-          - true
-          - tcp
-          - udp
-      systemd_resolved_readetchosts:
-        type: bool
+      systemd_resolved_configuration:
+        type: dict
+        options:
+          Resolve:
+            type: dict
+            options:
+              DNS:
+                type: list
+                elements: str
+              FallbackDNS:
+                type: list
+                elements: str
+              Domains:
+                type: list
+                elements: str
+              LLMNR:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - resolve
+              MulticastDNS:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - resolve
+              DNSSEC:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - allow-downgrade
+              DNSOverTLS:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - opportunistic
+              Cache:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - no-negative
+              DNSStubListener:
+                type: str
+                choices:
+                  - "false"
+                  - "true"
+                  - tcp
+                  - udp
+              ReadEtcHosts:
+                type: bool
       systemd_resolved_package_name:
         type: str
       systemd_resolved_package_version:

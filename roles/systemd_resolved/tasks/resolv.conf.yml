@@ -6,7 +6,10 @@
     state: link
     force: true
   become: true
-  when: systemd_resolved_dnsstublistener is defined and not systemd_resolved_dnsstublistener
+  when:
+    - systemd_resolved_configuration is defined
+    - systemd_resolved_configuration.Resolve.DNSStubListener is defined
+    - not systemd_resolved_configuration.Resolve.DNSStubListener
 
 - name: Ensure stub resolv.conf
   ansible.builtin.file:
@@ -15,4 +18,7 @@
     state: link
     force: true
   become: true
-  when: systemd_resolved_dnsstublistener is defined and systemd_resolved_dnsstublistener in [true, "udp"]
+  when:
+    - systemd_resolved_configuration is defined
+    - systemd_resolved_configuration.Resolve.DNSStubListener is defined
+    - systemd_resolved_configuration.Resolve.DNSStubListener in [true, "udp"]
