@@ -1,21 +1,25 @@
 {{ ansible_managed | comment }}
 {% macro systemd_template_render_key_value(systemd_template_key, systemd_template_value) %}
-{% if systemd_template_value | type_debug == 'bool' %}
+{%     if systemd_template_value | type_debug == 'bool' %}
 {{ systemd_template_key }} = {{ systemd_template_value | string | lower }}
-{% elif systemd_template_value is sequence and systemd_template_value is not string %}
+{%     elif systemd_template_value is sequence and systemd_template_value is not string %}
 {{ systemd_template_key }} = {{ systemd_template_value | join(' ') }}
-{% else %}
+{%     else %}
 {{ systemd_template_key }} = {{ systemd_template_value }}
-{% endif %}
+{%     endif %}
 {% endmacro %}
 {% for systemd_template_section, systemd_template_params in systemd_configuration.items() %}
-{% if systemd_template_params is mapping %}
+{%     if systemd_template_params is mapping %}
 [{{ systemd_template_section }}]
-{% for systemd_template_key, systemd_template_value in systemd_template_params.items() %}{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) }}{% endfor %}
-{% elif systemd_template_params is iterable and systemd_template_params is not string %}
-{% for systemd_template_instance in systemd_template_params %}
+{%         for systemd_template_key, systemd_template_value in systemd_template_params.items() %}
+{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) -}}
+{%         endfor %}
+{%     elif systemd_template_params is iterable and systemd_template_params is not string %}
+{%         for systemd_template_instance in systemd_template_params %}
 [{{ systemd_template_section }}]
-{% for systemd_template_key, systemd_template_value in systemd_template_instance.items() %}{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) }}{% endfor %}
-{% endfor %}
-{% endif %}
+{%             for systemd_template_key, systemd_template_value in systemd_template_instance.items() %}
+{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) -}}
+{%             endfor %}
+{%         endfor %}
+{%     endif %}
 {% endfor %}
