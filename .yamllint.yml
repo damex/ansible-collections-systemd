@@ -2,6 +2,7 @@
 rules:
   braces:
     forbid: non-empty
+    max-spaces-inside: 1
   brackets:
     forbid: non-empty
   colons:
