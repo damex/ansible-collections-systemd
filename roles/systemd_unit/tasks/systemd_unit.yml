@@ -22,7 +22,7 @@
 
 - name: Ensure systemd unit {{ systemd_unit_name }}
   ansible.builtin.template:
-    src: "{{ role_path | dirname | dirname }}/templates/unit_configuration.j2"
+    src: unit_configuration.j2
     dest: "{{ systemd_unit_file }}"
     owner: root
     group: root
@@ -52,7 +52,7 @@
 
 - name: Ensure override for systemd unit {{ systemd_unit_name }}
   ansible.builtin.template:
-    src: "{{ role_path | dirname | dirname }}/templates/unit_configuration.j2"
+    src: unit_configuration.j2
     dest: "{{ systemd_unit_override_file }}"
     owner: root
     group: root
