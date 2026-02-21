@@ -1,0 +1,62 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_logind_service_name:
+        type: str
+      systemd_logind_configuration_file:
+        type: path
+      systemd_logind_configuration:
+        type: dict
+        options:
+          Login:
+            type: dict
+            options:
+              NAutoVTs:
+                type: int
+              ReserveVT:
+                type: int
+              KillUserProcesses:
+                type: bool
+              KillOnlyUsers:
+                type: str
+              KillExcludeUsers:
+                type: str
+              IdleAction:
+                type: str
+              IdleActionSec:
+                type: str
+              InhibitDelayMaxSec:
+                type: str
+              UserStopDelaySec:
+                type: str
+              HandlePowerKey:
+                type: str
+              HandleSuspendKey:
+                type: str
+              HandleHibernateKey:
+                type: str
+              HandleLidSwitch:
+                type: str
+              HandleLidSwitchExternalPower:
+                type: str
+              HandleLidSwitchDocked:
+                type: str
+              PowerKeyIgnoreInhibited:
+                type: bool
+              SuspendKeyIgnoreInhibited:
+                type: bool
+              HibernateKeyIgnoreInhibited:
+                type: bool
+              LidSwitchIgnoreInhibited:
+                type: bool
+              HoldoffTimeoutSec:
+                type: str
+              RuntimeDirectorySize:
+                type: str
+              InhibitorsMax:
+                type: int
+              SessionsMax:
+                type: int
+              RemoveIPC:
+                type: bool
