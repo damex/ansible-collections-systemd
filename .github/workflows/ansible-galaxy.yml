@@ -18,5 +18,5 @@ jobs:
           python-version: "3.14"
       - run: pip install --user pipenv
       - run: pipenv install --deploy
-      - run: pipenv run ansible-galaxy collection build
-      - run: pipenv run ansible-galaxy collection publish --api-key ${{ secrets.GALAXY_API_KEY }} damex-systemd-*.tar.gz
+      - run: pipenv run build-for-galaxy
+      - run: pipenv run publish-to-galaxy --api-key ${{ secrets.GALAXY_API_KEY }} damex-systemd-*.tar.gz

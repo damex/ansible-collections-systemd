@@ -12,6 +12,8 @@ yamllint = "==1.38.0"
 
 [scripts]
 lint = "ansible-lint"
+build-for-galaxy = "ansible-galaxy collection build"
+publish-to-galaxy = "ansible-galaxy collection publish"
 
 [requires]
 python_version = "3.14"
