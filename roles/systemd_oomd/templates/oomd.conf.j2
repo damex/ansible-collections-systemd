@@ -1,5 +1,10 @@
 {{ ansible_managed | comment }}
+{% macro systemd_oomd_oom(key, value) -%}
+{% if value is defined -%}
+{{ key }} = {{ value }}
+{%- endif -%}
+{% endmacro %}
 [OOM]
-SwapUsedLimit = {{ systemd_oomd_swapusedlimit }}
-DefaultMemoryPressureLimit = {{ systemd_oomd_defaultmemorypressurelimit }}
-DefaultMemoryPressureDurationSec = {{ systemd_oomd_defaultmemorypressuredurationsec }}
+{{ systemd_oomd_oom('SwapUsedLimit', systemd_oomd_swapusedlimit) }}
+{{ systemd_oomd_oom('DefaultMemoryPressureLimit', systemd_oomd_defaultmemorypressurelimit) }}
+{{ systemd_oomd_oom('DefaultMemoryPressureDurationSec', systemd_oomd_defaultmemorypressuredurationsec) }}

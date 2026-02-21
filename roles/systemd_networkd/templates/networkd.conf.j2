@@ -1,18 +1,22 @@
 {{ ansible_managed | comment }}
-
+{% macro systemd_networkd_network(key, value) -%}
+{% if value is defined -%}
+{{ key }} = {{ value }}
+{%- endif -%}
+{% endmacro %}
 [Network]
-SpeedMeter = {{ systemd_networkd_network_speedmeter }}
-SpeedMeterIntervalSec = {{ systemd_networkd_network_speedmeterintervalsec }}
-ManageForeignRoutingPolicyRules = {{ systemd_networkd_network_manageforeignroutingpolicyrules }}
-ManageForeignRoutes = {{ systemd_networkd_network_manageforeignroutes }}
-RouteTable = {{ systemd_networkd_network_routetable }}
+{{ systemd_networkd_network('SpeedMeter', systemd_networkd_network_speedmeter) }}
+{{ systemd_networkd_network('SpeedMeterIntervalSec', systemd_networkd_network_speedmeterintervalsec) }}
+{{ systemd_networkd_network('ManageForeignRoutingPolicyRules', systemd_networkd_network_manageforeignroutingpolicyrules) }}
+{{ systemd_networkd_network('ManageForeignRoutes', systemd_networkd_network_manageforeignroutes) }}
+{{ systemd_networkd_network('RouteTable', systemd_networkd_network_routetable) }}
 
 [DHCPv4]
-DUIDType = {{ systemd_networkd_dhcpv4_duidtype }}
-DUIDRawData = {{ systemd_networkd_dhcpv4_duidtyperawdata }}
-UseDomains = {{ systemd_networkd_dhcpv4_usedomains }}
+{{ systemd_networkd_network('DUIDType', systemd_networkd_dhcpv4_duidtype) }}
+{{ systemd_networkd_network('DUIDRawData', systemd_networkd_dhcpv4_duidtyperawdata) }}
+{{ systemd_networkd_network('UseDomains', systemd_networkd_dhcpv4_usedomains) }}
 
 [DHCPv6]
-DUIDType = {{ systemd_networkd_dhcpv6_duidtype }}
-DUIDRawData = {{ systemd_networkd_dhcpv6_duidtyperawdata }}
-UseDomains = {{ systemd_networkd_dhcpv6_usedomains }}
+{{ systemd_networkd_network('DUIDType', systemd_networkd_dhcpv6_duidtype) }}
+{{ systemd_networkd_network('DUIDRawData', systemd_networkd_dhcpv6_duidtyperawdata) }}
+{{ systemd_networkd_network('UseDomains', systemd_networkd_dhcpv6_usedomains) }}

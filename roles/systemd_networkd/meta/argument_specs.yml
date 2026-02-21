@@ -11,16 +11,10 @@ argument_specs:
       systemd_networkd_network_speedmeterintervalsec:
         type: str
       systemd_networkd_network_manageforeignroutingpolicyrules:
-        type: str
+        type: bool
       systemd_networkd_network_manageforeignroutes:
-        type: str
+        type: bool
       systemd_networkd_network_routetable:
-        type: str
-      systemd_networkd_dhcp_duidtype:
-        type: str
-      systemd_networkd_dhcp_duidtyperawdata:
-        type: str
-      systemd_networkd_dhcp_usedomains:
         type: str
       systemd_networkd_dhcpv4_duidtype:
         type: str

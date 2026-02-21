@@ -1,4 +1,9 @@
 {{ ansible_managed | comment }}
+{% macro systemd_pstore_pstore(key, value) -%}
+{% if value is defined -%}
+{{ key }} = {{ value }}
+{%- endif -%}
+{% endmacro %}
 [PStore]
-Storage = {{ systemd_pstore_storage }}
-Unlink = {{ systemd_pstore_unlink }}
+{{ systemd_pstore_pstore('Storage', systemd_pstore_storage) }}
+{{ systemd_pstore_pstore('Unlink', systemd_pstore_unlink) }}
