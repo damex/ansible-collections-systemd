@@ -6,129 +6,135 @@ argument_specs:
         type: str
       systemd_journald_configuration_file:
         type: path
-      systemd_journald_storage:
-        type: str
-        choices:
-          - volatile
-          - persistent
-          - auto
-          - none
-      systemd_journald_compress:
-        type: bool
-      systemd_journald_seal:
-        type: bool
-      systemd_journald_splitmode:
-        type: str
-        choices:
-          - uid
-          - none
-      systemd_journald_ratelimitinterval:
-        type: str
-      systemd_journald_ratelimitburst:
-        type: int
-      systemd_journald_systemmaxuse:
-        type: str
-      systemd_journald_systemkeepfree:
-        type: str
-      systemd_journald_systemmaxfilesize:
-        type: str
-      systemd_journald_systemmaxfiles:
-        type: int
-      systemd_journald_runtimemaxuse:
-        type: str
-      systemd_journald_runtimekeepfree:
-        type: str
-      systemd_journald_runtimemaxfilesize:
-        type: str
-      systemd_journald_runtimemaxfiles:
-        type: int
-      systemd_journald_maxfilesec:
-        type: str
-      systemd_journald_maxretentionsec:
-        type: str
-      systemd_journald_syncintervalsec:
-        type: str
-      systemd_journald_forwardtosyslog:
-        type: bool
-      systemd_journald_forwardtokmsg:
-        type: bool
-      systemd_journald_forwardtoconsole:
-        type: bool
-      systemd_journald_forwardtowall:
-        type: bool
-      systemd_journald_forwardtosocket:
-        type: bool
-      systemd_journald_maxlevelstore:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_maxlevelsyslog:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_maxlevelkmsg:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_maxlevelconsole:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_maxlevelwall:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_maxlevelsocket:
-        type: str
-        choices:
-          - emerg
-          - alert
-          - crit
-          - err
-          - warning
-          - notice
-          - info
-          - debug
-      systemd_journald_readkmsg:
-        type: bool
-      systemd_journald_audit:
-        type: bool
-      systemd_journald_ttypath:
-        type: path
-      systemd_journald_linemax:
-        type: str
+      systemd_journald_configuration:
+        type: dict
+        options:
+          Journal:
+            type: dict
+            options:
+              Storage:
+                type: str
+                choices:
+                  - volatile
+                  - persistent
+                  - auto
+                  - none
+              Compress:
+                type: bool
+              Seal:
+                type: bool
+              SplitMode:
+                type: str
+                choices:
+                  - uid
+                  - none
+              RateLimitInterval:
+                type: str
+              RateLimitBurst:
+                type: int
+              SystemMaxUse:
+                type: str
+              SystemKeepFree:
+                type: str
+              SystemMaxFileSize:
+                type: str
+              SystemMaxFiles:
+                type: int
+              RuntimeMaxUse:
+                type: str
+              RuntimeKeepFree:
+                type: str
+              RuntimeMaxFileSize:
+                type: str
+              RuntimeMaxFiles:
+                type: int
+              MaxFileSec:
+                type: str
+              MaxRetentionSec:
+                type: str
+              SyncIntervalSec:
+                type: str
+              ForwardToSyslog:
+                type: bool
+              ForwardToKMsg:
+                type: bool
+              ForwardToConsole:
+                type: bool
+              ForwardToWall:
+                type: bool
+              ForwardToSocket:
+                type: bool
+              MaxLevelStore:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              MaxLevelSyslog:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              MaxLevelKMsg:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              MaxLevelConsole:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              MaxLevelWall:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              MaxLevelSocket:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              ReadKMsg:
+                type: bool
+              Audit:
+                type: bool
+              TTYPath:
+                type: path
+              LineMax:
+                type: str
