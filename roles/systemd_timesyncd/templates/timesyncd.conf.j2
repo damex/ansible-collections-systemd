@@ -1,11 +1,18 @@
 {{ ansible_managed | comment }}
+{% macro systemd_timesyncd_time(key, value, fallback=None) -%}
+{% if value is defined -%}
+{% if value is sequence and value is not string -%}
+{{ key }} = {{ value | join(' ') }}
+{%- else -%}
+{{ key }} = {{ value }}
+{%- endif -%}
+{%- elif value is not defined and fallback is not none -%}
+{{ key }} = {{ fallback }}
+{%- endif -%}
+{% endmacro %}
 [Time]
-{% if systemd_timesyncd_ntp | length %}
-NTP = {{ systemd_timesyncd_ntp | join(' ') }}
-{% else %}
-NTP = {{ ansible_default_ipv4.gateway }}
-{% endif %}
-FallbackNTP = {{ systemd_timesyncd_fallbackntp | join(' ') }}
-RootDistanceMaxSec = {{ systemd_timesyncd_rootdistancemaxsec }}
-PollIntervalMinSec = {{ systemd_timesyncd_pollintervalminsec }}
-PollIntervalMaxSec = {{ systemd_timesyncd_pollintervalmaxsec }}
+{{ systemd_timesyncd_time('NTP', systemd_timesyncd_ntp, ansible_facts['default_ipv4']['gateway']) }}
+{{ systemd_timesyncd_time('FallbackNTP', systemd_timesyncd_fallbackntp) }}
+{{ systemd_timesyncd_time('RootDistanceMaxSec', systemd_timesyncd_rootdistancemaxsec) }}
+{{ systemd_timesyncd_time('PollIntervalMinSec', systemd_timesyncd_pollintervalminsec) }}
+{{ systemd_timesyncd_time('PollIntervalMaxSec', systemd_timesyncd_pollintervalmaxsec) }}

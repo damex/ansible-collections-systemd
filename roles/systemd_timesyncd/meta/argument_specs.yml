@@ -13,11 +13,11 @@ argument_specs:
         type: list
         elements: str
       systemd_timesyncd_rootdistancemaxsec:
-        type: int
+        type: str
       systemd_timesyncd_pollintervalminsec:
-        type: int
+        type: str
       systemd_timesyncd_pollintervalmaxsec:
-        type: int
+        type: str
       systemd_timesyncd_package_name:
         type: str
       systemd_timesyncd_package_version:
