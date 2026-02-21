@@ -2,7 +2,7 @@
 
 [![](https://github.com/damex/ansible-collections-systemd/workflows/linting/badge.svg)](https://github.com/damex/ansible-collections-systemd/actions)
 
-The systemd collection is designed to be used with any modern Debian Linux derivatives.
+The systemd collection is designed to be used with any modern `Debian` or `Fedora` or `Red Hat Enterprise Linux` derivatives.
 
 `Ansible Galaxy` users can add systemd collection using the following command:
 
