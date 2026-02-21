@@ -1,23 +1,23 @@
 {{ ansible_managed | comment }}
-{% macro systemd_template_render_key_value(systemd_template_key, systemd_template_value) %}
-{% if systemd_template_value | type_debug == 'bool' %}
-{{ systemd_template_key }} = {{ systemd_template_value | string | lower }}
-{% elif systemd_template_value is sequence and systemd_template_value is not string %}
-{% for systemd_template_item in systemd_template_value %}
-{{ systemd_template_key }} = {{ systemd_template_item }}
+{% macro systemd_unit_template_render_key_value(systemd_unit_template_key, systemd_unit_template_value) %}
+{% if systemd_unit_template_value | type_debug == 'bool' %}
+{{ systemd_unit_template_key }} = {{ systemd_unit_template_value | string | lower }}
+{% elif systemd_unit_template_value is sequence and systemd_unit_template_value is not string %}
+{% for systemd_unit_template_item in systemd_unit_template_value %}
+{{ systemd_unit_template_key }} = {{ systemd_unit_template_item }}
 {% endfor %}
 {% else %}
-{{ systemd_template_key }} = {{ systemd_template_value }}
+{{ systemd_unit_template_key }} = {{ systemd_unit_template_value }}
 {% endif %}
 {% endmacro %}
-{% for systemd_template_section, systemd_template_params in systemd_configuration.items() %}
-{% if systemd_template_params is mapping %}
-[{{ systemd_template_section }}]
-{% for systemd_template_key, systemd_template_value in systemd_template_params.items() %}{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) }}{% endfor %}
-{% elif systemd_template_params is iterable and systemd_template_params is not string %}
-{% for systemd_template_instance in systemd_template_params %}
-[{{ systemd_template_section }}]
-{% for systemd_template_key, systemd_template_value in systemd_template_instance.items() %}{{ systemd_template_render_key_value(systemd_template_key, systemd_template_value) }}{% endfor %}
+{% for systemd_unit_template_section, systemd_unit_template_params in systemd_configuration.items() %}
+{% if systemd_unit_template_params is mapping %}
+[{{ systemd_unit_template_section }}]
+{% for systemd_unit_template_key, systemd_unit_template_value in systemd_unit_template_params.items() %}{{ systemd_unit_template_render_key_value(systemd_unit_template_key, systemd_unit_template_value) }}{% endfor %}
+{% elif systemd_unit_template_params is iterable and systemd_unit_template_params is not string %}
+{% for systemd_unit_template_instance in systemd_unit_template_params %}
+[{{ systemd_unit_template_section }}]
+{% for systemd_unit_template_key, systemd_unit_template_value in systemd_unit_template_instance.items() %}{{ systemd_unit_template_render_key_value(systemd_unit_template_key, systemd_unit_template_value) }}{% endfor %}
 {% endfor %}
 {% endif %}
 {% endfor %}
