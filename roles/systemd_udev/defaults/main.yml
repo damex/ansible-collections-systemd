@@ -1,0 +1,6 @@
+---
+systemd_udev_service_name: systemd-udevd
+systemd_udev_configuration_file: /etc/udev/udev.conf
+systemd_udev_rules_directory: /etc/udev/rules.d
+systemd_udev_rules: []
+systemd_udev_state: present

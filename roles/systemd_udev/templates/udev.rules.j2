@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+{% for rule in systemd_udev_rule.rules %}
+{{ rule }}
+{% endfor %}

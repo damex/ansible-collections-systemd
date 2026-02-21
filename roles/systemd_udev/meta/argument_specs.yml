@@ -1,0 +1,53 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_udev_service_name:
+        type: str
+      systemd_udev_configuration_file:
+        type: path
+      systemd_udev_rules_directory:
+        type: path
+      systemd_udev_configuration:
+        type: dict
+        options:
+          udev_log:
+            type: str
+            choices:
+              - err
+              - info
+              - debug
+          children_max:
+            type: int
+          exec_delay:
+            type: int
+          event_timeout:
+            type: int
+          resolve_names:
+            type: str
+            choices:
+              - early
+              - late
+              - never
+          timeout_signal:
+            type: str
+      systemd_udev_rules:
+        type: list
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          rules:
+            type: list
+            elements: str
+          state:
+            type: str
+            choices:
+              - present
+              - absent
+      systemd_udev_state:
+        type: str
+        choices:
+          - present
+          - absent

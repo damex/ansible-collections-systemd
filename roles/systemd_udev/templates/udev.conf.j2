@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+{% for key, value in systemd_udev_configuration.items() %}
+{{ key }}={{ value }}
+{% endfor %}

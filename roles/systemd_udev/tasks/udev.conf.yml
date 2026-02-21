@@ -1,0 +1,11 @@
+---
+- name: Ensure systemd udev udev.conf
+  ansible.builtin.template:
+    src: udev.conf.j2
+    dest: "{{ systemd_udev_configuration_file }}"
+    group: root
+    owner: root
+    mode: "0644"
+  become: true
+  register: systemd_udev_conf
+  when: systemd_udev_configuration is defined
