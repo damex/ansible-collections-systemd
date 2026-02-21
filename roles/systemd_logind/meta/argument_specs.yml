@@ -1,0 +1,140 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_logind_service_name:
+        type: str
+      systemd_logind_configuration_file:
+        type: path
+      systemd_logind_nautovts:
+        type: int
+      systemd_logind_reservevt:
+        type: int
+      systemd_logind_killuserprocesses:
+        type: bool
+      systemd_logind_killonlyusers:
+        type: str
+      systemd_logind_killexcludeusers:
+        type: str
+      systemd_logind_idleaction:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_idleactionsec:
+        type: str
+      systemd_logind_inhibitdelaymaxsec:
+        type: str
+      systemd_logind_userstopdelaysec:
+        type: str
+      systemd_logind_handlepowerkey:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_handlesuspendkey:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_handle_hibernatekey:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_handlelidswitch:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_handlelidswitchexternalpower:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_handlelidswitchdocked:
+        type: str
+        choices:
+          - ignore
+          - poweroff
+          - reboot
+          - halt
+          - kexec
+          - suspend
+          - hibernate
+          - hybrid-sleep
+          - suspend-then-hibernate
+          - sleep
+          - lock
+      systemd_logind_powerkeyignoreinhibited:
+        type: bool
+      systemd_logind_suspendkeyignoreinhibited:
+        type: bool
+      systemd_logind_hibernatekeyignoreinhibited:
+        type: bool
+      systemd_logind_lidswitchignoreinhibited:
+        type: bool
+      systemd_logind_holdofftimeoutsec:
+        type: str
+      systemd_logind_runtimedirectorysize:
+        type: str
+      systemd_logind_inhibitorsmax:
+        type: int
+      systemd_logind_sessionsmax:
+        type: int
+      systemd_logind_removeipc:
+        type: bool
