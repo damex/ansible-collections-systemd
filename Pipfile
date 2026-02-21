@@ -13,6 +13,7 @@ j2lint = "==1.2.0"
 
 [scripts]
 lint = "ansible-lint"
+lint-templates = "find . -name 'templates' -type d -exec j2lint {} +"
 build-for-galaxy = "ansible-galaxy collection build"
 publish-to-galaxy = "ansible-galaxy collection publish"
 
