@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  author: Roman Kuzmitskii <ansible@damex.org>
+  description: systemd systemd role
+  license: GPLv2
+  min_ansible_version: 2.19.0
+  platforms: []
+dependencies: []

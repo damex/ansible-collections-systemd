@@ -1,0 +1,142 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_systemd_system_configuration_file:
+        type: path
+      systemd_systemd_user_configuration_file:
+        type: path
+      systemd_systemd_system_configuration:
+        type: dict
+        options:
+          Manager:
+            type: dict
+            options:
+              LogLevel:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              LogTarget:
+                type: str
+                choices:
+                  - console
+                  - console-prefixed
+                  - kmsg
+                  - journal
+                  - journal-or-kmsg
+                  - auto
+                  - null
+              CPUAffinity:
+                type: str
+              NUMAPolicy:
+                type: str
+              NUMAMask:
+                type: str
+              RuntimeWatchdogSec:
+                type: str
+              RebootWatchdogSec:
+                type: str
+              KExecWatchdogSec:
+                type: str
+              WatchdogDevice:
+                type: path
+              CapabilityBoundingSet:
+                type: str
+              NoNewPrivileges:
+                type: bool
+              SystemCallArchitectures:
+                type: str
+              TimerSlackNSec:
+                type: str
+              StatusUnitFormat:
+                type: str
+              DefaultTimerAccuracySec:
+                type: str
+              DefaultStandardOutput:
+                type: str
+              DefaultStandardError:
+                type: str
+              DefaultTimeoutStartSec:
+                type: str
+              DefaultTimeoutStopSec:
+                type: str
+              DefaultTimeoutAbortSec:
+                type: str
+              DefaultRestartSec:
+                type: str
+              DefaultStartLimitIntervalSec:
+                type: str
+              DefaultStartLimitBurst:
+                type: int
+              DefaultEnvironment:
+                type: str
+              DefaultCPUAccounting:
+                type: bool
+              DefaultMemoryAccounting:
+                type: bool
+              DefaultTasksAccounting:
+                type: bool
+              DefaultTasksMax:
+                type: str
+              DefaultLimitNOFILE:
+                type: str
+      systemd_systemd_user_configuration:
+        type: dict
+        options:
+          Manager:
+            type: dict
+            options:
+              LogLevel:
+                type: str
+                choices:
+                  - emerg
+                  - alert
+                  - crit
+                  - err
+                  - warning
+                  - notice
+                  - info
+                  - debug
+              LogTarget:
+                type: str
+                choices:
+                  - console
+                  - console-prefixed
+                  - kmsg
+                  - journal
+                  - journal-or-kmsg
+                  - auto
+                  - null
+              DefaultTimerAccuracySec:
+                type: str
+              DefaultStandardOutput:
+                type: str
+              DefaultStandardError:
+                type: str
+              DefaultTimeoutStartSec:
+                type: str
+              DefaultTimeoutStopSec:
+                type: str
+              DefaultRestartSec:
+                type: str
+              DefaultStartLimitIntervalSec:
+                type: str
+              DefaultStartLimitBurst:
+                type: int
+              DefaultEnvironment:
+                type: str
+              DefaultCPUAccounting:
+                type: bool
+              DefaultMemoryAccounting:
+                type: bool
+              DefaultTasksAccounting:
+                type: bool
+              DefaultTasksMax:
+                type: str

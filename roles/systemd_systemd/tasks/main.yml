@@ -1,0 +1,12 @@
+---
+- name: Ensure systemd systemd
+  tags:
+    - systemd
+    - systemd_systemd
+  block:
+    - name: Ensure systemd systemd system.conf
+      ansible.builtin.import_tasks: system.conf.yml
+    - name: Ensure systemd systemd user.conf
+      ansible.builtin.import_tasks: user.conf.yml
+    - name: Ensure systemd systemd handlers are flushed
+      ansible.builtin.meta: flush_handlers
