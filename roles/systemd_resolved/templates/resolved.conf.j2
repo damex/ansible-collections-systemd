@@ -1,18 +1,23 @@
 {{ ansible_managed | comment }}
+{% macro systemd_resolved_resolve(key, value, fallback=None) -%}
+{% if value is defined -%}
+{% if value is sequence and value is not string -%}
+{{ key }} = {{ value | join(' ') }}
+{%- else -%}
+{{ key }} = {{ value }}
+{%- endif -%}
+{%- elif value is not defined and fallback is not none -%}
+{{ key }} = {{ fallback }}
+{%- endif -%}
+{% endmacro %}
 [Resolve]
-{% if systemd_resolved_dns | length %}
-DNS = {{ systemd_resolved_dns | join(' ') }}
-{% else %}
-DNS = {{ ansible_default_ipv4.gateway }}
-{% endif %}
-{% if systemd_resolved_fallbackdns | length %}
-FallbackDNS = {{ systemd_resolved_fallbackdns | join(' ') }}
-{% endif %}
-Domains = {{ systemd_resolved_domains | join(' ') }}
-LLMNR = {{ systemd_resolved_llmnr }}
-MulticastDNS = {{ systemd_resolved_multicastdns }}
-DNSSEC = {{ systemd_resolved_dnssec }}
-DNSOverTLS = {{ systemd_resolved_dnsovertls }}
-Cache = {{ systemd_resolved_cache }}
-DNSStubListener = {{ systemd_resolved_dnsstublistener }}
-ReadEtcHosts = {{ systemd_resolved_readetchosts }}
+{{ systemd_resolved_resolve('DNS', systemd_resolved_dns, ansible_facts['default_ipv4']['gateway']) }}
+{{ systemd_resolved_resolve('FallbackDNS', systemd_resolved_fallbackdns) }}
+{{ systemd_resolved_resolve('Domains', systemd_resolved_domains) }}
+{{ systemd_resolved_resolve('LLMNR', systemd_resolved_llmnr) }}
+{{ systemd_resolved_resolve('MulticastDNS', systemd_resolved_multicastdns) }}
+{{ systemd_resolved_resolve('DNSSEC', systemd_resolved_dnssec) }}
+{{ systemd_resolved_resolve('DNSOverTLS', systemd_resolved_dnsovertls) }}
+{{ systemd_resolved_resolve('Cache', systemd_resolved_cache) }}
+{{ systemd_resolved_resolve('DNSStubListener', systemd_resolved_dnsstublistener) }}
+{{ systemd_resolved_resolve('ReadEtcHosts', systemd_resolved_readetchosts) }}
