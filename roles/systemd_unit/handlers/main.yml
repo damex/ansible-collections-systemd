@@ -1,5 +1,5 @@
 ---
 - name: Ensure systemd configuration is reloaded
-  ansible.builtin.systemd:
+  ansible.builtin.systemd_service:
     daemon_reload: true
   become: true
