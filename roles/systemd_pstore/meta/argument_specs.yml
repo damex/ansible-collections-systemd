@@ -6,11 +6,17 @@ argument_specs:
         type: str
       systemd_pstore_configuration_file:
         type: path
-      systemd_pstore_storage:
-        type: str
-        choices:
-          - none
-          - external
-          - journal
-      systemd_pstore_unlink:
-        type: bool
+      systemd_pstore_configuration:
+        type: dict
+        options:
+          PStore:
+            type: dict
+            options:
+              Storage:
+                type: str
+                choices:
+                  - none
+                  - external
+                  - journal
+              Unlink:
+                type: bool
