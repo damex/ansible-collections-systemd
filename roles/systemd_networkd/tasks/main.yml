@@ -5,6 +5,8 @@
     - systemd
     - systemd_networkd
   block:
+    - name: Ensure systemd networkd facts
+      ansible.builtin.import_tasks: facts.yml
     - name: Ensure systemd networkd package
       ansible.builtin.import_tasks: package.yml
     - name: Ensure systemd networkd networkd.conf

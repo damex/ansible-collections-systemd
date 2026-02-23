@@ -5,6 +5,8 @@
     - systemd
     - systemd_resolved
   block:
+    - name: Ensure systemd resolved facts
+      ansible.builtin.import_tasks: facts.yml
     - name: Ensure systemd resolved package
       ansible.builtin.import_tasks: package.yml
     - name: Ensure systemd resolved resolved.conf

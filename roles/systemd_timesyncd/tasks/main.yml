@@ -5,6 +5,8 @@
     - systemd_timesyncd
     - timesyncd
   block:
+    - name: Ensure systemd timesyncd facts
+      ansible.builtin.import_tasks: facts.yml
     - name: Ensure systemd timesyncd package
       ansible.builtin.import_tasks: package.yml
     - name: Ensure systemd timesyncd timesyncd.conf
