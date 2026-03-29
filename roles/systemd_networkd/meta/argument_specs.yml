@@ -55,6 +55,9 @@ argument_specs:
         type: list
         elements: dict
         options:
+          file_name:
+            type: str
+            required: true
           Match:
             type: dict
             options:
@@ -115,6 +118,9 @@ argument_specs:
         type: list
         elements: dict
         options:
+          file_name:
+            type: str
+            required: true
           NetDev:
             type: dict
             options:
@@ -137,6 +143,9 @@ argument_specs:
         type: list
         elements: dict
         options:
+          file_name:
+            type: str
+            required: true
           Match:
             type: dict
             options:
