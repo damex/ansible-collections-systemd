@@ -51,6 +51,66 @@ argument_specs:
                 type: str
               UseDomains:
                 type: str
+      systemd_networkd_links_configuration:
+        type: list
+        elements: dict
+        options:
+          Match:
+            type: dict
+            options:
+              OriginalName:
+                type: str
+              Path:
+                type: str
+              Driver:
+                type: str
+              Type:
+                type: str
+              MACAddress:
+                type: str
+          Link:
+            type: dict
+            options:
+              SR-IOVVirtualFunctions:
+                type: int
+              MACAddress:
+                type: str
+              Name:
+                type: str
+              MTUBytes:
+                type: str
+              Duplex:
+                type: str
+                choices:
+                  - half
+                  - full
+              WakeOnLan:
+                type: str
+          SR-IOV:
+            type: list
+            elements: dict
+            options:
+              VirtualFunction:
+                type: int
+              VLANId:
+                type: int
+              QualityOfService:
+                type: int
+              VLANProtocol:
+                type: str
+                choices:
+                  - 802.1Q
+                  - 802.1ad
+              MACSpoofCheck:
+                type: bool
+              QueryReceiveSideScaling:
+                type: bool
+              Trust:
+                type: bool
+              LinkState:
+                type: str
+              MACAddress:
+                type: str
       systemd_networkd_netdevs_configuration:
         type: list
         elements: dict

@@ -4,4 +4,4 @@
     name: damex.systemd.systemd_service
   vars:
     systemd_service_name: "{{ systemd_networkd_service_name }}"
-    systemd_service_restart_on: "{{ systemd_networkd_conf.changed or systemd_networkd_netdev_conf.changed or systemd_networkd_network_conf.changed }}"
+    systemd_service_restart_on: "{{ systemd_networkd_conf.changed or systemd_networkd_link_conf.changed or systemd_networkd_netdev_conf.changed or systemd_networkd_network_conf.changed }}"

@@ -13,6 +13,8 @@
       ansible.builtin.import_tasks: networkd.conf.yml
     - name: Ensure systemd networkd configurations directory
       ansible.builtin.import_tasks: directory.yml
+    - name: Ensure systemd networkd link configuration
+      ansible.builtin.import_tasks: link.yml
     - name: Ensure systemd networkd netdev configuration
       ansible.builtin.import_tasks: netdev.yml
     - name: Ensure systemd networkd network configuration

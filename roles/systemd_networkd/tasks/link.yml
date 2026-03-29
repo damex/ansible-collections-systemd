@@ -1,0 +1,16 @@
+---
+- name: Ensure systemd networkd link configuration
+  ansible.builtin.template:
+    src: "{{ role_path | dirname | dirname }}/templates/configuration.j2"
+    dest: "{{ systemd_networkd_configurations_directory }}/{{ systemd_networkd_link_configuration.Match.OriginalName }}.link"
+    group: root
+    owner: root
+    mode: "0644"
+  vars:
+    systemd_configuration: "{{ systemd_networkd_link_configuration }}"
+  loop: "{{ systemd_networkd_links_configuration }}"
+  loop_control:
+    label: "{{ systemd_networkd_link_configuration.Match.OriginalName }}"
+    loop_var: systemd_networkd_link_configuration
+  become: true
+  register: systemd_networkd_link_conf
