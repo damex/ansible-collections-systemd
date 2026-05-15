@@ -42,12 +42,9 @@
     path: "{{ systemd_unit_override_directory }}"
     owner: root
     group: root
-    mode: "0644"
+    mode: "0755"
     state: "{{ (systemd_unit_override_name is defined and systemd_unit_override_name | length > 0) | ternary('directory', 'absent') }}"
   notify: Ensure systemd configuration is reloaded
-  when:
-    - systemd_unit_override_name is defined
-    - systemd_unit_override_name | length > 0
   become: true
 
 - name: Ensure override for systemd unit {{ systemd_unit_name }}
