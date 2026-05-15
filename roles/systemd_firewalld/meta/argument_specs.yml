@@ -19,8 +19,6 @@ argument_specs:
         type: bool
       systemd_firewalld_rule_zone:
         type: str
-      systemd_firewalld_rule_rich_rule:
-        type: str
       systemd_firewalld_rule_state:
         type: str
         choices:

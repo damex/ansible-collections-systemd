@@ -5,7 +5,6 @@ systemd_firewalld_service_name: firewalld
 systemd_firewalld_rule_immediate: true
 systemd_firewalld_rule_permanent: true
 systemd_firewalld_rule_zone: public
-systemd_firewalld_rule_rich_rule: ""
 systemd_firewalld_rule_state: enabled
 systemd_firewalld_rules: []
 systemd_firewalld_zone_forward: false
