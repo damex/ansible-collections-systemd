@@ -1,0 +1,12 @@
+---
+systemd_udevd_rules: []
+systemd_udevd_service_name: systemd-udevd
+systemd_udevd_configuration_directory: /etc/udev/rules.d
+systemd_udevd_state: present
+systemd_udevd_default_action_operator: ==
+systemd_udevd_default_subsystem_operator: ==
+systemd_udevd_default_kernel_operator: ==
+systemd_udevd_default_driver_operator: ==
+systemd_udevd_default_drivers_operator: ==
+systemd_udevd_default_tag_operator: ==
+systemd_udevd_default_run_operator: "="

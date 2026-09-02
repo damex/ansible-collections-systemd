@@ -1,0 +1,119 @@
+---
+argument_specs:
+  main:
+    options:
+      systemd_udevd_service_name:
+        type: str
+      systemd_udevd_default_action_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+      systemd_udevd_default_subsystem_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+      systemd_udevd_default_kernel_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+      systemd_udevd_default_driver_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+      systemd_udevd_default_drivers_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+      systemd_udevd_default_tag_operator:
+        type: str
+        choices:
+          - ==
+          - "!="
+          - "="
+          - +=
+          - -=
+          - :=
+      systemd_udevd_default_run_operator:
+        type: str
+        choices:
+          - "="
+          - +=
+          - :=
+      systemd_udevd_rules:
+        type: list
+        elements: dict
+        options:
+          name:
+            required: true
+            type: str
+          ACTION:
+            type: str
+          ACTION_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+          SUBSYSTEM:
+            type: str
+          SUBSYSTEM_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+          KERNEL:
+            type: str
+          KERNEL_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+          DRIVER:
+            type: str
+          DRIVER_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+          DRIVERS:
+            type: str
+          DRIVERS_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+          TAG:
+            type: str
+          TAG_OPERATOR:
+            type: str
+            choices:
+              - ==
+              - "!="
+              - "="
+              - +=
+              - -=
+              - :=
+          RUN:
+            type: str
+          RUN_OPERATOR:
+            type: str
+            choices:
+              - "="
+              - +=
+              - :=
+          state:
+            type: str
+            choices:
+              - present
+              - absent
+      systemd_udevd_configuration_directory:
+        type: path
+      systemd_udevd_state:
+        type: str
+        choices:
+          - present
+          - absent
