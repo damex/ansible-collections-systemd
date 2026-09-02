@@ -9,7 +9,7 @@
   when:
     - systemd_resolved_configuration is defined
     - systemd_resolved_configuration.Resolve.DNSStubListener is defined
-    - not systemd_resolved_configuration.Resolve.DNSStubListener
+    - systemd_resolved_configuration.Resolve.DNSStubListener == "false"
 
 - name: Ensure stub resolv.conf
   ansible.builtin.file:
@@ -21,4 +21,4 @@
   when:
     - systemd_resolved_configuration is defined
     - systemd_resolved_configuration.Resolve.DNSStubListener is defined
-    - systemd_resolved_configuration.Resolve.DNSStubListener in [true, "udp"]
+    - systemd_resolved_configuration.Resolve.DNSStubListener in ["true", "tcp", "udp"]
