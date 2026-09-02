@@ -1,0 +1,10 @@
+{% set systemd_udevd_rule_meta_keys = ['name', 'state'] %}
+{% set systemd_udevd_rule_parts = [] %}
+{% for systemd_udevd_rule_key, systemd_udevd_rule_value in systemd_udevd_rule.items() %}
+{%     if systemd_udevd_rule_key not in systemd_udevd_rule_meta_keys and not systemd_udevd_rule_key.endswith('_OPERATOR') %}
+{%         set systemd_udevd_rule_operator = systemd_udevd_rule.get(systemd_udevd_rule_key + '_OPERATOR', lookup('ansible.builtin.vars', 'systemd_udevd_default_' + systemd_udevd_rule_key | lower + '_operator')) %}
+{%         set systemd_udevd_rule_parts_appended = systemd_udevd_rule_parts.append(systemd_udevd_rule_key + systemd_udevd_rule_operator + '"' + systemd_udevd_rule_value + '"') %}
+{%     endif %}
+{% endfor %}
+{{ ansible_managed | comment }}
+{{ systemd_udevd_rule_parts | join(', ') }}

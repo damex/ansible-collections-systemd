@@ -1,0 +1,11 @@
+---
+- name: Ensure systemd udevd
+  tags:
+    - udevd
+    - systemd
+    - systemd_udevd
+  block:
+    - name: Ensure systemd udevd configuration
+      ansible.builtin.import_tasks: configuration.yml
+    - name: Ensure systemd udevd systemd service
+      ansible.builtin.import_tasks: systemd_service.yml

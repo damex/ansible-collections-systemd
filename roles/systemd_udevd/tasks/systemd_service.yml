@@ -1,0 +1,7 @@
+---
+- name: Ensure systemd service {{ systemd_udevd_service_name }}
+  ansible.builtin.include_role:
+    name: damex.systemd.systemd_service
+  vars:
+    systemd_service_name: "{{ systemd_udevd_service_name }}"
+    systemd_service_reload_on: "{{ systemd_udevd_rules_present_state.changed or systemd_udevd_rules_absent_state.changed }}"

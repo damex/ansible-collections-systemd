@@ -1,0 +1,27 @@
+---
+- name: Ensure systemd udevd rules present
+  ansible.builtin.template:
+    src: udev.rules.j2
+    dest: "{{ systemd_udevd_configuration_directory }}/{{ systemd_udevd_rule.name }}.rules"
+    group: root
+    owner: root
+    mode: "0644"
+  loop: "{{ systemd_udevd_rules }}"
+  loop_control:
+    label: "{{ systemd_udevd_rule.name }}"
+    loop_var: systemd_udevd_rule
+  when: systemd_udevd_rule.state | default(systemd_udevd_state) == "present"
+  become: true
+  register: systemd_udevd_rules_present_state
+
+- name: Ensure systemd udevd rules absent
+  ansible.builtin.file:
+    path: "{{ systemd_udevd_configuration_directory }}/{{ systemd_udevd_rule.name }}.rules"
+    state: absent
+  loop: "{{ systemd_udevd_rules }}"
+  loop_control:
+    label: "{{ systemd_udevd_rule.name }}"
+    loop_var: systemd_udevd_rule
+  when: systemd_udevd_rule.state | default(systemd_udevd_state) == "absent"
+  become: true
+  register: systemd_udevd_rules_absent_state
