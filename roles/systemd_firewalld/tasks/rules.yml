@@ -3,6 +3,7 @@
   ansible.posix.firewalld:
     port: "{{ systemd_firewalld_rule.port | default(omit) }}"
     protocol: "{{ systemd_firewalld_rule.protocol | default(omit) }}"
+    service: "{{ systemd_firewalld_rule.service | default(omit) }}"
     immediate: "{{ systemd_firewalld_rule.immediate | default(systemd_firewalld_rule_immediate) }}"
     interface: "{{ systemd_firewalld_rule.interface | default(omit) }}"
     permanent: "{{ systemd_firewalld_rule.permanent | default(systemd_firewalld_rule_permanent) }}"

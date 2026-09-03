@@ -32,6 +32,8 @@ argument_specs:
             type: str
           protocol:
             type: str
+          service:
+            type: str
           immediate:
             type: bool
           interface:
